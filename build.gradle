@@ -18,7 +18,7 @@ apply plugin: "com.jfrog.artifactory"
 apply plugin: 'io.spring.dependency-management'
 apply plugin: "jacoco"
 
-group = 'com.esoftsystem'
+group = 'com.esoftsystems'
 version = '1.0.0'
 sourceCompatibility = 11
 targetCompatibility = 11
