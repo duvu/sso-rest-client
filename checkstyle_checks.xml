@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<!--
+    This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+    Checkstyle-Configuration: sso-rest-model-checker
+    Description: none
+-->
+<module name="Checker">
+  <property name="severity" value="error"/>
+  <module name="TreeWalker">
+    <module name="FileContentsHolder"/>
+    <module name="JavadocMethod">
+      <property name="scope" value="protected"/>
+      <property name="allowUndeclaredRTE" value="true"/>
+      <property name="allowMissingPropertyJavadoc" value="true"/>
+    </module>
+    <module name="JavadocType">
+      <property name="scope" value="protected"/>
+      <property name="authorFormat" value="[A-Za-z]{2,}"/>
+    </module>
+    <module name="JavadocStyle">
+      <property name="scope" value="protected"/>
+    </module>
+    <module name="ConstantName"/>
+    <module name="LocalFinalVariableName"/>
+    <module name="LocalVariableName"/>
+    <module name="MemberName"/>
+    <module name="MethodName"/>
+    <module name="PackageName"/>
+    <module name="StaticVariableName"/>
+    <module name="TypeName"/>
+    <module name="AvoidStarImport"/>
+    <module name="IllegalImport"/>
+    <module name="RedundantImport"/>
+    <module name="UnusedImports"/>
+    <module name="LineLength">
+      <property name="max" value="150"/>
+    </module>
+    <module name="MethodLength">
+      <property name="max" value="50"/>
+    </module>
+    <module name="ParameterNumber">
+      <property name="max" value="10"/>
+    </module>
+    <module name="EmptyForIteratorPad">
+      <property name="option" value="space"/>
+    </module>
+    <module name="MethodParamPad"/>
+    <module name="NoWhitespaceAfter">
+      <property name="tokens" value="BNOT,DEC,DOT,INC,LNOT,UNARY_MINUS,UNARY_PLUS"/>
+    </module>
+    <module name="NoWhitespaceBefore">
+      <property name="allowLineBreaks" value="true"/>
+      <property name="tokens" value="SEMI,DOT,POST_DEC,POST_INC"/>
+    </module>
+    <module name="ParenPad"/>
+    <module name="TypecastParenPad">
+      <property name="tokens" value="RPAREN,TYPECAST"/>
+    </module>
+    <module name="WhitespaceAfter"/>
+    <module name="WhitespaceAround">
+      <property name="ignoreEnhancedForColon" value="false"/>
+    </module>
+    <module name="ModifierOrder"/>
+    <module name="AvoidNestedBlocks"/>
+    <module name="EmptyBlock"/>
+    <module name="LeftCurly"/>
+    <module name="NeedBraces"/>
+    <module name="RightCurly"/>
+    <module name="EmptyStatement"/>
+    <module name="EqualsHashCode"/>
+    <module name="IllegalInstantiation"/>
+    <module name="InnerAssignment"/>
+    <module name="MagicNumber">
+      <property name="ignoreAnnotation" value="true"/>
+    </module>
+    <module name="MissingSwitchDefault"/>
+    <module name="SimplifyBooleanExpression"/>
+    <module name="SimplifyBooleanReturn"/>
+    <module name="FinalClass"/>
+<!--    <module name="InterfaceIsType"/>-->
+    <module name="VisibilityModifier"/>
+    <module name="UpperEll"/>
+    <module name="MissingDeprecated"/>
+    <module name="PackageAnnotation"/>
+    <module name="AbstractClassName">
+      <property name="format" value="^Abstract.*$|^.*Factory$|^.*REST$|^E2.*$"/>
+      <property name="ignoreModifier" value="true"/>
+    </module>
+    <module name="ParameterName"/>
+    <module name="AvoidStaticImport"/>
+    <module name="AnonInnerLength"/>
+    <module name="MethodCount">
+      <property name="maxTotal" value="50"/>
+      <property name="maxPrivate" value="50"/>
+      <property name="maxPackage" value="50"/>
+      <property name="maxProtected" value="50"/>
+      <property name="maxPublic" value="50"/>
+    </module>
+    <module name="GenericWhitespace"/>
+    <module name="InnerTypeLast"/>
+    <module name="ThrowsCount">
+      <property name="max" value="2"/>
+    </module>
+    <module name="ArrayTypeStyle"/>
+    <module name="Indentation">
+        <property name="basicOffset" value="2"/>
+        <property name="braceAdjustment" value="0"/>
+        <property name="caseIndent" value="2"/>
+        <property name="throwsIndent" value="2"/>
+        <property name="arrayInitIndent" value="2"/>
+        <property name="lineWrappingIndentation" value="2"/>
+    </module>
+    <module name="TrailingComment"/>
+    <module name="BooleanExpressionComplexity"/>
+    <module name="ClassDataAbstractionCoupling">
+      <property name="max" value="14"/>
+    </module>
+    <module name="ClassFanOutComplexity">
+      <property name="max" value="25"/>
+    </module>
+    <module name="CyclomaticComplexity"/>
+    <module name="JavaNCSS"/>
+    <module name="NPathComplexity"/>
+    <module name="DefaultComesLast"/>
+    <module name="DeclarationOrder"/>
+    <module name="EqualsAvoidNull"/>
+    <module name="ExplicitInitialization"/>
+    <module name="HiddenField">
+      <property name="ignoreConstructorParameter" value="true"/>
+      <property name="ignoreSetter" value="true"/>
+    </module>
+    <module name="IllegalCatch"/>
+    <module name="IllegalThrows"/>
+    <module name="ModifiedControlVariable"/>
+    <module name="MultipleVariableDeclarations"/>
+    <module name="NestedForDepth"/>
+    <module name="NestedIfDepth"/>
+    <module name="NestedTryDepth"/>
+    <module name="PackageDeclaration"/>
+    <module name="ReturnCount">
+      <property name="max" value="6"/>
+    </module>
+    <module name="StringLiteralEquality"/>
+    <module name="OneStatementPerLine"/>
+    <module name="CovariantEquals"/>
+  </module>
+  <module name="NewlineAtEndOfFile">
+    <property name="fileExtensions" value=".java"/>
+  </module>
+  <module name="Translation"/>
+  <module name="SuppressionCommentFilter">
+    <property name="offCommentFormat" value="CHECKSTYLE.OFF\: ([\w\|]+)"/>
+    <property name="onCommentFormat" value="CHECKSTYLE.ON\: ([\w\|]+)"/>
+    <property name="checkFormat" value="$1"/>
+  </module>
+  <module name="RegexpHeader">
+    <property name="header" value="\A/*\n * @\(#\)(\w*[-]?\w*)\.java\n *\n * Copyright \d\d\d\d by esoft systems \(tm\)\.\n * All rights reserved\.\n */"/>
+    <property name="fileExtensions" value=".java"/>
+  </module>
+  <module name="FileLength"/>
+  <module name="FileTabCharacter">
+    <property name="eachLine" value="true"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="format" value="^.*printStackTrace\(\)$|^System.out.print.*$"/>
+    <property name="message" value="You should avoid using System.out.prints and printStackTrace of exceptions: use logger for that."/>
+    <property name="ignoreCase" value="true"/>
+  </module>
+</module>
