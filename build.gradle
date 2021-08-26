@@ -1,9 +1,22 @@
+import org.gradle.api.publish.maven.MavenPublication
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
+    }
+}
+
 plugins {
     id 'org.springframework.boot' version '2.5.4'
     id 'java'
     id 'checkstyle'
 }
 
+apply plugin: 'maven-publish'
+apply plugin: "com.jfrog.artifactory"
 apply plugin: 'io.spring.dependency-management'
 apply plugin: "jacoco"
 
@@ -25,15 +38,12 @@ repositories {
 }
 
 dependencies {
-
-    implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'javax.validation:validation-api:2.0.1.Final'
     implementation 'com.fasterxml.jackson.core:jackson-core:2.12.4'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 bootJar {
@@ -43,6 +53,9 @@ bootJar {
 jar {
     enabled = true
     archiveClassifier = ''
+    manifest {
+        attributes 'Implementation-Title': 'Single Sign On Rest Model', 'Implementation-Version': archiveVersion
+    }
 }
 
 def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, '')
@@ -55,28 +68,30 @@ checkstyle {
     sourceSets = [project.sourceSets.main]
 }
 
-jacocoTestReport {
-    afterEvaluate {
-        classDirectories.setFrom(files(classDirectories.files.collect {
-            fileTree(dir: 'src/main/java', exclude: ['**/*Test*', '**/*IT*'])
-        }))
-    }
-    reports {
-        xml.enabled false
-        csv.enabled false
-        html.destination file("${buildDir}/reports/jacocoHtml")
+
+publishing {
+    publications {
+        jar(MavenPublication) {
+            groupId groupId
+            version = version
+            from components.java
+        }
     }
 }
 
-test {
-    jacoco {
-        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+artifactory {
+    contextUrl = 'http://repos.esoftsystems.com:8081/artifactory'
+    publish {
+        repository {
+            repoKey = 'libs-release-local'
+            username = "admin"
+            password = "XxfjFzX2UfcEC9"
+        }
+        defaults {
+            publications('jar')
+            publishArtifacts = true
+            properties = ['qa.level': 'basic', 'dev.team': 'core']
+            publishPom = true
+        }
     }
-    afterTest { desc, result ->
-        println "Executed test ${desc.name} [${desc.className}] with result: ${result.resultType}"
-    }
-}
-
-bootRun {
-    dependsOn checkstyleMain
 }
