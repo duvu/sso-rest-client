@@ -48,4 +48,12 @@ public interface ClientAuthenticationService {
    * @return AuthorizationDto data.
    */
   AuthorizationDto validateToken(String tokenType, String accessToken);
+
+  /**
+   * Validate user token.
+   *
+   * @param authenticationHeader the authentication header.
+   * @return AuthorizationDto data.
+   */
+  AuthorizationDto validateToken(String authenticationHeader);
 }

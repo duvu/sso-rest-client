@@ -65,4 +65,10 @@ public class ClientAuthenticationServiceImpl extends BaseSingleSignOnClientServi
     HttpEntity<Object> requestEntity = getAuthenticatedRequestEntity(tokenType, accessToken, null);
     return restTemplate.exchange(ssoServiceUrl + VALIDATION_TOKEN_ENDPOINT, HttpMethod.GET, requestEntity, AuthorizationDto.class).getBody();
   }
+
+  @Override
+  public AuthorizationDto validateToken(String authenticationHeader) {
+    HttpEntity<Object> requestEntity = getAuthenticatedRequestEntity(authenticationHeader, null);
+    return restTemplate.exchange(ssoServiceUrl + VALIDATION_TOKEN_ENDPOINT, HttpMethod.GET, requestEntity, AuthorizationDto.class).getBody();
+  }
 }

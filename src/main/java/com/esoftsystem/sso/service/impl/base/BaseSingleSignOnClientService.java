@@ -27,9 +27,20 @@ public class BaseSingleSignOnClientService {
    * @return the request entity
    */
   protected HttpEntity<Object> getAuthenticatedRequestEntity(String tokenType, String token, Object requestObject) {
+    return getAuthenticatedRequestEntity(tokenType + SPACE + token, requestObject);
+  }
+
+  /**
+   * Make SSO Request entity with Authorization header.
+   *
+   * @param authenticationHeader the authentication header.
+   * @param requestObject        the request object
+   * @return the request entity
+   */
+  protected HttpEntity<Object> getAuthenticatedRequestEntity(String authenticationHeader, Object requestObject) {
     HttpHeaders headers = new HttpHeaders();
     headers.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-    headers.set(HttpHeaders.AUTHORIZATION, tokenType + SPACE + token);
+    headers.set(HttpHeaders.AUTHORIZATION, authenticationHeader);
     return new HttpEntity<>(requestObject, headers);
   }
 }
