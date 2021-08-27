@@ -10,8 +10,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -45,6 +47,10 @@ public class AuthorizationDto {
   private String firstName;
   @JsonProperty("lastName")
   private String lastName;
+  @JsonProperty("company")
+  private String company;
+  @JsonProperty("team")
+  private String team;
   @JsonProperty("avatarUrl")
   private String avatarUrl;
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
