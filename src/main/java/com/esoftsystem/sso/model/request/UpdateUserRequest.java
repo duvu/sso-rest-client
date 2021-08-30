@@ -6,15 +6,18 @@
  */
 package com.esoftsystem.sso.model.request;
 
+import java.util.Date;
+import java.util.List;
+
 import com.esoftsystem.sso.model.UserGroupDto;
 import com.esoftsystem.sso.model.request.base.UpdateUserBaseRequest;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Date;
-import java.util.List;
+
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -23,6 +26,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UpdateUserRequest extends UpdateUserBaseRequest {
@@ -61,8 +65,8 @@ public class UpdateUserRequest extends UpdateUserBaseRequest {
   //CHECKSTYLE.OFF: ParameterNumber
   @Builder
   public UpdateUserRequest(String title, String firstName, String lastName, Date dateOfBirth, String avatarUrl, String skypeId, String countryCode,
-      String phone, String username, String resourceName, String userStatus, String companyCode, String teamCode,
-      List<UserGroupDto> groups) {
+                           String phone, String username, String resourceName, String userStatus, String companyCode, String teamCode,
+                           List<UserGroupDto> groups) {
     super(title, firstName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, phone);
     this.username = username;
     this.resourceName = resourceName;
