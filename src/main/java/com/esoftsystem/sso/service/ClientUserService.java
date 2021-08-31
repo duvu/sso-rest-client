@@ -11,6 +11,7 @@ import com.esoftsystem.sso.model.request.CreateUserRequest;
 import com.esoftsystem.sso.model.request.IssueResetPasswordTokenRequest;
 import com.esoftsystem.sso.model.request.ResetPasswordRequest;
 import com.esoftsystem.sso.model.request.UpdatePasswordRequest;
+import com.esoftsystem.sso.model.request.UpdateUserProfileRequest;
 import com.esoftsystem.sso.model.request.UpdateUserRequest;
 
 /**
@@ -47,6 +48,17 @@ public interface ClientUserService {
    * @return the userDto
    */
   UserDto loadUserProfile(String tokenType, String accessToken);
+
+
+  /**
+   * Current logged-in update her/his user's profile.
+   *
+   * @param tokenType                token type, mostly: 'Bearer'
+   * @param accessToken              the access token
+   * @param updateUserProfileRequest the request data.
+   * @return the userDto
+   */
+  UserDto updateUserProfile(String tokenType, String accessToken, UpdateUserProfileRequest updateUserProfileRequest);
 
   /**
    * Current logged-in change her/his password.

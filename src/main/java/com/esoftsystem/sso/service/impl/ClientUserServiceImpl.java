@@ -11,10 +11,13 @@ import com.esoftsystem.sso.model.request.CreateUserRequest;
 import com.esoftsystem.sso.model.request.IssueResetPasswordTokenRequest;
 import com.esoftsystem.sso.model.request.ResetPasswordRequest;
 import com.esoftsystem.sso.model.request.UpdatePasswordRequest;
+import com.esoftsystem.sso.model.request.UpdateUserProfileRequest;
 import com.esoftsystem.sso.model.request.UpdateUserRequest;
 import com.esoftsystem.sso.service.ClientUserService;
 import com.esoftsystem.sso.service.impl.base.BaseSingleSignOnClientService;
+
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -81,5 +84,11 @@ public class ClientUserServiceImpl extends BaseSingleSignOnClientService impleme
   @Override
   public void resetPassword(String resetPasswordToken, ResetPasswordRequest resetPasswordRequest) {
     restTemplate.put(ssoServiceUrl + RESET_PASSWORD_WITH_TOKEN_ENDPOINT + resetPasswordToken, resetPasswordRequest);
+  }
+
+  @Override
+  public UserDto updateUserProfile(String tokenType, String accessToken, UpdateUserProfileRequest updateUserProfileRequest) {
+    HttpEntity<Object> requestEntity = getAuthenticatedRequestEntity(tokenType, accessToken, updateUserProfileRequest);
+    return restTemplate.exchange(ssoServiceUrl + LOAD_USER_PROFILE_ENDPOINT, HttpMethod.PUT, requestEntity, UserDto.class).getBody();
   }
 }
