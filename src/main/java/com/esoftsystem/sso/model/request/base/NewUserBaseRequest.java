@@ -34,6 +34,8 @@ public class NewUserBaseRequest {
   private String title;
   @JsonProperty("firstName")
   private String firstName;
+  @JsonProperty("middleName")
+  private String middleName;
   @JsonProperty("lastName")
   private String lastName;
   @JsonFormat(pattern = "yyyy-MM-dd")

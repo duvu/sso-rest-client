@@ -15,9 +15,6 @@ import com.esoftsystem.sso.model.request.UpdateUserProfileRequest;
 import com.esoftsystem.sso.model.request.UpdateUserRequest;
 import com.esoftsystem.sso.service.ClientUserService;
 import com.esoftsystem.sso.service.impl.base.BaseSingleSignOnClientService;
-
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -29,7 +26,6 @@ import org.springframework.web.client.RestTemplate;
  * @author Vinh Nguyen
  * @since 1.0.0
  */
-@Slf4j
 @Service
 public class ClientUserServiceImpl extends BaseSingleSignOnClientService implements ClientUserService {
 

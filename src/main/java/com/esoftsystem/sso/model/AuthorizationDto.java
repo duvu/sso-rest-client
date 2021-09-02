@@ -45,6 +45,8 @@ public class AuthorizationDto {
   private String title;
   @JsonProperty("firstName")
   private String firstName;
+  @JsonProperty("middleName")
+  private String middleName;
   @JsonProperty("lastName")
   private String lastName;
   @JsonProperty("company")

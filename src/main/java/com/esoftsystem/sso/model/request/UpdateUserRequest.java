@@ -49,6 +49,7 @@ public class UpdateUserRequest extends UpdateUserBaseRequest {
    *
    * @param title        user's title
    * @param firstName    user's first name
+   * @param middleName   user's middle name
    * @param lastName     user's last name
    * @param dateOfBirth  user's date of birth
    * @param avatarUrl    user's avatar
@@ -64,10 +65,10 @@ public class UpdateUserRequest extends UpdateUserBaseRequest {
    */
   //CHECKSTYLE.OFF: ParameterNumber
   @Builder
-  public UpdateUserRequest(String title, String firstName, String lastName, Date dateOfBirth, String avatarUrl, String skypeId, String countryCode,
-                           String phone, String username, String resourceName, String userStatus, String companyCode, String teamCode,
-                           List<UserGroupDto> groups) {
-    super(title, firstName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, phone);
+  public UpdateUserRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl, String skypeId,
+                           String countryCode, String phone, String username, String resourceName, String userStatus, String companyCode,
+                           String teamCode, List<UserGroupDto> groups) {
+    super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, phone);
     this.username = username;
     this.resourceName = resourceName;
     this.userStatus = userStatus;

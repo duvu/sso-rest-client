@@ -6,13 +6,15 @@
  */
 package com.esoftsystem.sso.model.request;
 
+import java.util.Date;
+import java.util.List;
+
 import com.esoftsystem.sso.model.UserGroupDto;
 import com.esoftsystem.sso.model.request.base.NewUserBaseRequest;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Date;
-import java.util.List;
+
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -43,6 +45,7 @@ public class CreateUserRequest extends NewUserBaseRequest {
    * @param resourceName      the resourceName
    * @param title             user's title
    * @param firstName         user's first name
+   * @param middleName        user's middle name
    * @param lastName          user's last name
    * @param dateOfBirth       user's date of birth
    * @param password          user's password
@@ -58,10 +61,11 @@ public class CreateUserRequest extends NewUserBaseRequest {
    */
   //CHECKSTYLE.OFF: ParameterNumber
   @Builder
-  public CreateUserRequest(String username, String resourceName, String title, String firstName, String lastName, Date dateOfBirth,
+  public CreateUserRequest(String username, String resourceName, String title, String middleName, String firstName, String lastName, Date dateOfBirth,
                            String password, String confirmedPassword, String avatarUrl, String skypeId, String countryCode, String phone,
                            List<UserGroupDto> groups, String userStatus, String companyCode, String teamCode) {
-    super(username, resourceName, title, firstName, lastName, dateOfBirth, password, confirmedPassword, avatarUrl, skypeId, countryCode, phone);
+    super(username, resourceName, title, firstName, middleName, lastName, dateOfBirth, password, confirmedPassword, avatarUrl, skypeId, countryCode,
+          phone);
     this.groups = groups;
     this.userStatus = userStatus;
     this.companyCode = companyCode;

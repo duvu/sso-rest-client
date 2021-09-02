@@ -10,7 +10,6 @@ import com.esoftsystem.sso.model.AuthorizationDto;
 import com.esoftsystem.sso.model.request.AuthenticationRequest;
 import com.esoftsystem.sso.service.ClientAuthenticationService;
 import com.esoftsystem.sso.service.impl.base.BaseSingleSignOnClientService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -22,7 +21,6 @@ import org.springframework.web.client.RestTemplate;
  * @author Vinh Nguyen
  * @since 1.0.0
  */
-@Slf4j
 @Service
 public class ClientAuthenticationServiceImpl extends BaseSingleSignOnClientService implements ClientAuthenticationService {
 
