@@ -41,6 +41,8 @@ public class AuthorizationDto {
   private String refreshToken;
   @JsonProperty("username")
   private String username;
+  @JsonProperty("resourceName")
+  private String resourceName;
   @JsonProperty("title")
   private String title;
   @JsonProperty("firstName")
