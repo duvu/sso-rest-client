@@ -15,11 +15,11 @@ import com.esoftsystem.sso.model.response.TokenStatusResponse;
 public interface ClientTokenService {
 
   /**
-   * Get general token status.
+   * Validate resetPasswordTokenString, and return its status.
    *
    * @param tokenString token string
    * @return the token status
    */
-  TokenStatusResponse getGeneralTokenStatus(String tokenString);
+  TokenStatusResponse validateResetPasswordToken(String tokenString);
 
 }

@@ -31,4 +31,6 @@ public class TokenStatusResponse {
   private String token;
   @JsonProperty("status")
   private String status;
+  @JsonProperty("type")
+  private String type;
 }
