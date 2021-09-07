@@ -20,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class ClientTokenServiceImpl implements ClientTokenService {
 
-  private static final String GET_GENERAL_TOKEN_STATUS_ENDPOINT = "tokens/reset-password/validate/{tokenString}";
+  private static final String RESET_PASSWORD_TOKEN_VALIDATION_ENDPOINT = "tokens/reset-password/validation/{tokenString}";
 
   @Value("${single.sign.on.service.base.url}")
   private String ssoServiceUrl;
@@ -38,6 +38,6 @@ public class ClientTokenServiceImpl implements ClientTokenService {
 
   @Override
   public TokenStatusResponse validateResetPasswordToken(String tokenString) {
-    return restTemplate.getForObject(ssoServiceUrl + GET_GENERAL_TOKEN_STATUS_ENDPOINT, TokenStatusResponse.class, tokenString);
+    return restTemplate.getForObject(ssoServiceUrl + RESET_PASSWORD_TOKEN_VALIDATION_ENDPOINT, TokenStatusResponse.class, tokenString);
   }
 }
