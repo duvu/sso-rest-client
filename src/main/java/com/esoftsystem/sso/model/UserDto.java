@@ -47,8 +47,8 @@ public class UserDto implements Serializable {
   @JsonProperty("lastName")
   private String lastName;
   @JsonFormat(pattern = "yyyy-MM-dd")
-  @JsonProperty("birthday")
-  private Date birthday;
+  @JsonProperty("dateOfBirth")
+  private Date dateOfBirth;
   @JsonProperty("avatarUrl")
   private String avatarUrl;
   @JsonProperty("status")
@@ -75,5 +75,4 @@ public class UserDto implements Serializable {
 
   @JsonProperty("groups")
   private List<UserGroupDto> groups;
-
 }
