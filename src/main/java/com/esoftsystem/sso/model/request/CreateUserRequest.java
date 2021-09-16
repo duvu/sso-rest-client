@@ -6,6 +6,7 @@
  */
 package com.esoftsystem.sso.model.request;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -27,8 +28,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CreateUserRequest extends NewUserBaseRequest {
+public class CreateUserRequest extends NewUserBaseRequest implements Serializable {
 
+  private static final long serialVersionUID = 1596944316135656526L;
   @JsonProperty(value = "groups")
   private List<UserGroupDto> groups;
   @JsonProperty(value = "userStatus")

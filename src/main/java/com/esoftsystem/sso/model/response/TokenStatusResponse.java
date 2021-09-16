@@ -6,6 +6,8 @@
  */
 package com.esoftsystem.sso.model.response;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -25,8 +27,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TokenStatusResponse {
+public class TokenStatusResponse implements Serializable {
 
+  private static final long serialVersionUID = -1481021518298424837L;
   @JsonProperty("token")
   private String token;
   @JsonProperty("status")

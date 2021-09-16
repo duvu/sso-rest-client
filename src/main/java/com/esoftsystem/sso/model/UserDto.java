@@ -10,9 +10,11 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,7 +32,7 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDto implements Serializable {
 
-  private static final long serialVersionUID = -3774936052214672004L;
+  private static final long serialVersionUID = -6747461894998066240L;
 
   @JsonProperty("userId")
   private Long userId;
@@ -72,6 +74,8 @@ public class UserDto implements Serializable {
   private TeamDto team;
   @JsonProperty(value = "company")
   private CompanyDto company;
+  @JsonProperty(value = "location")
+  private LocationDto location;
 
   @JsonProperty("groups")
   private List<UserGroupDto> groups;

@@ -6,6 +6,7 @@
  */
 package com.esoftsystem.sso.model.request;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.esoftsystem.sso.model.request.base.UpdateUserBaseRequest;
@@ -28,8 +29,9 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UpdateUserProfileRequest extends UpdateUserBaseRequest {
+public class UpdateUserProfileRequest extends UpdateUserBaseRequest implements Serializable {
 
+  private static final long serialVersionUID = 8022115544361163047L;
   private String currentPassword;
   private String newPassword;
 

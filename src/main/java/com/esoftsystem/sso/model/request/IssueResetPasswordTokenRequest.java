@@ -6,9 +6,12 @@
  */
 package com.esoftsystem.sso.model.request;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,8 +27,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class IssueResetPasswordTokenRequest {
+public class IssueResetPasswordTokenRequest implements Serializable {
 
+  private static final long serialVersionUID = 1911207048004094659L;
   @JsonProperty(value = "username", required = true)
   private String username;
   @JsonProperty(value = "resetPasswordLandingPagePrefix")

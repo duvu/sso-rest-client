@@ -6,6 +6,7 @@
  */
 package com.esoftsystem.sso.model.request;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -29,8 +30,9 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UpdateUserRequest extends UpdateUserBaseRequest {
+public class UpdateUserRequest extends UpdateUserBaseRequest implements Serializable {
 
+  private static final long serialVersionUID = 8750820823201136840L;
   @JsonProperty("username")
   private String username;
   @JsonProperty(value = "resourceName")

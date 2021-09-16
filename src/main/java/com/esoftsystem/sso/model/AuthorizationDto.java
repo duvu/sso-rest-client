@@ -6,13 +6,14 @@
  */
 package com.esoftsystem.sso.model;
 
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.Date;
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,8 +30,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AuthorizationDto {
+public class AuthorizationDto implements Serializable {
 
+  private static final long serialVersionUID = 3196186876199866391L;
   @JsonProperty("userId")
   private Long userId;
   @JsonProperty("tokenType")

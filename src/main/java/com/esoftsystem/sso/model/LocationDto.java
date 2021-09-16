@@ -1,10 +1,10 @@
 /*
- * @(#)UpdatePasswordRequest.java
+ * @(#)LocationDto.java
  *
  * Copyright 2021 by esoft systems (tm).
  * All rights reserved.
  */
-package com.esoftsystem.sso.model.request;
+package com.esoftsystem.sso.model;
 
 import java.io.Serializable;
 
@@ -23,17 +23,15 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UpdatePasswordRequest implements Serializable {
+public class LocationDto implements Serializable {
 
-  private static final long serialVersionUID = -345018678319976524L;
-  @JsonProperty(value = "username", required = true)
-  private String username;
-  @JsonProperty(value = "currentPassword", required = true)
-  private String currentPassword;
-  @JsonProperty(value = "newPassword", required = true)
-  private String newPassword;
+  private static final long serialVersionUID = 7244575976858599568L;
+  @JsonProperty("locationCode")
+  private String locationCode;
+  @JsonProperty("locationName")
+  private String locationName;
 }
