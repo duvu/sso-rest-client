@@ -46,6 +46,7 @@ public class UpdateUserProfileRequest extends UpdateUserBaseRequest implements S
    * @param avatarUrl       user's avatar
    * @param skypeId         user's skypeId
    * @param countryCode     user's country code
+   * @param locationCode    user's location code
    * @param phone           user's phone number
    * @param currentPassword submitted current password for checking before changing to new password.
    * @param newPassword     new password to change.
@@ -53,8 +54,9 @@ public class UpdateUserProfileRequest extends UpdateUserBaseRequest implements S
   //CHECKSTYLE.OFF: ParameterNumber
   @Builder
   public UpdateUserProfileRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth,
-                                  String avatarUrl, String skypeId, String countryCode, String phone, String currentPassword, String newPassword) {
-    super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, phone);
+                                  String avatarUrl, String skypeId, String countryCode, String locationCode, String phone,
+                                  String currentPassword, String newPassword) {
+    super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone);
     this.currentPassword = currentPassword;
     this.newPassword = newPassword;
   }
