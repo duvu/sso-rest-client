@@ -39,8 +39,8 @@ public class FindUserSummaryRequest implements Serializable {
   private List<Long> groupIds;
   @JsonProperty(value = "statuses")
   private List<String> statuses;
-  @JsonProperty(value = "keywords")
-  private String keywords;
+  @JsonProperty(value = "keyword")
+  private String keyword;
 
   @JsonProperty(value = "pageIndex")
   private Integer pageIndex;
