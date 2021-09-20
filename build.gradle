@@ -19,7 +19,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: "jacoco"
 
 group = 'com.esoftsystems'
-version = '1.0.13'
+version = '1.0.14'
 
 configurations {
     compileOnly {
