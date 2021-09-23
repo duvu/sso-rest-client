@@ -30,7 +30,7 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CreateUserRequest extends NewUserBaseRequest implements Serializable {
 
-  private static final long serialVersionUID = 1596944316135656526L;
+  private static final long serialVersionUID = -7320500338791209759L;
   @JsonProperty(value = "groups")
   private List<UserGroupDto> groups;
   @JsonProperty(value = "userStatus")
@@ -55,6 +55,7 @@ public class CreateUserRequest extends NewUserBaseRequest implements Serializabl
    * @param avatarUrl         user's avatar
    * @param skypeId           user's skypeId
    * @param countryCode       user's country code
+   * @param locationCode      user's location code
    * @param phone             user's phone number
    * @param teamCode          user's team code
    * @param companyCode       user's company code
@@ -63,15 +64,15 @@ public class CreateUserRequest extends NewUserBaseRequest implements Serializabl
    */
   //CHECKSTYLE.OFF: ParameterNumber
   @Builder
-  public CreateUserRequest(String username, String resourceName, String title, String middleName, String firstName, String lastName, Date dateOfBirth,
-                           String password, String confirmedPassword, String avatarUrl, String skypeId, String countryCode, String phone,
-                           List<UserGroupDto> groups, String userStatus, String companyCode, String teamCode) {
+  public CreateUserRequest(String username, String resourceName, String title, String firstName, String middleName, String lastName,
+                           Date dateOfBirth, String password, String confirmedPassword, String avatarUrl, String skypeId, String countryCode,
+                           String locationCode, String phone, List<UserGroupDto> groups, String userStatus, String companyCode, String teamCode) {
     super(username, resourceName, title, firstName, middleName, lastName, dateOfBirth, password, confirmedPassword, avatarUrl, skypeId, countryCode,
-          phone);
+          locationCode, phone);
     this.groups = groups;
     this.userStatus = userStatus;
     this.companyCode = companyCode;
     this.teamCode = teamCode;
   }
-  //CHECKSTYLE.ON: ParameterNumber
+//CHECKSTYLE.ON: ParameterNumber
 }

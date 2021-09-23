@@ -57,6 +57,8 @@ public class AuthorizationDto implements Serializable {
   private String company;
   @JsonProperty("team")
   private String team;
+  @JsonProperty("locationCode")
+  private String locationCode;
   @JsonProperty("avatarUrl")
   private String avatarUrl;
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
