@@ -6,6 +6,9 @@
  */
 package com.esoftsystem.sso.service.impl.base;
 
+import java.util.List;
+
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -42,5 +45,16 @@ public class BaseSingleSignOnClientService {
     headers.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
     headers.set(HttpHeaders.AUTHORIZATION, authenticationHeader);
     return new HttpEntity<>(requestObject, headers);
+  }
+
+  /**
+   * Get parameterized response type for list.
+   *
+   * @param <T> the class response type
+   * @return the ParameterizedTypeReference list
+   */
+  protected <T> ParameterizedTypeReference<List<T>> getListParameterizedResponseType() {
+    return new ParameterizedTypeReference<>() {
+    };
   }
 }
