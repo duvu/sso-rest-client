@@ -38,14 +38,14 @@ public class ClientAuthenticationServiceImplTest extends BaseServiceImplTest {
   private static final String REFRESH_TOKEN_ENDPOINT = "authentication/tokens/refresh";
   private static final String VALIDATION_TOKEN_ENDPOINT = "authentication/tokens/validation";
 
-  @InjectMocks
-  private ClientAuthenticationServiceImpl clientAuthenticationService;
-
   @Mock
-  AuthorizationDto authorizationDto;
+  private AuthorizationDto authorizationDto;
 
   @Mock
   private ResponseEntity responseEntity;
+
+  @InjectMocks
+  private ClientAuthenticationServiceImpl clientAuthenticationService;
 
   @Before
   public void setup() {
