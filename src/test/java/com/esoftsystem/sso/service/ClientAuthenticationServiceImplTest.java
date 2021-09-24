@@ -1,5 +1,5 @@
 /*
- * @(#)ClientCompanyServiceImplTest.java
+ * @(#)ClientAuthenticationServiceImplTest.java
  *
  * Copyright 2021 by esoft systems (tm).
  * All rights reserved.
