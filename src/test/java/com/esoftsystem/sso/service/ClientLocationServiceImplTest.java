@@ -46,11 +46,11 @@ public class ClientLocationServiceImplTest extends BaseServiceImplTest {
   private ResponseEntity responseEntity;
   @Mock
   private List<LocationDto> locationDtos;
+  @Captor
+  private ArgumentCaptor<HttpEntity<Object>> httpEntityCaptor;
 
   @InjectMocks
   private ClientLocationServiceImpl clientLocationService;
-  @Captor
-  private ArgumentCaptor<HttpEntity<Object>> httpEntityCaptor;
 
   @Before
   public void setup() {

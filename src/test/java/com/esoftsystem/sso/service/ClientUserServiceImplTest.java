@@ -51,9 +51,6 @@ public class ClientUserServiceImplTest extends BaseServiceImplTest {
 
   private static final String RESET_PASSWORD_TOKEN = "q2osVyn7409Wk82IjBBDAECkPRbcFLDtlyiRF6dh";
 
-  @InjectMocks
-  private ClientUserServiceImpl clientUserService;
-
   @Mock
   private UserDto userDto;
   @Mock
@@ -62,6 +59,9 @@ public class ClientUserServiceImplTest extends BaseServiceImplTest {
   private UpdateUserProfileRequest updateUserProfileRequest;
   @Captor
   private ArgumentCaptor<HttpEntity<Object>> httpEntityCaptor;
+
+  @InjectMocks
+  private ClientUserServiceImpl clientUserService;
 
   @Before
   public void setup() {

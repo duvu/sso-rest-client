@@ -44,10 +44,11 @@ public class ClientTeamServiceImplTest extends BaseServiceImplTest {
   private ResponseEntity responseEntity;
   @Mock
   private List<TeamDto> teamDtos;
-  @InjectMocks
-  private ClientTeamServiceImpl clientTeamService;
   @Captor
   private ArgumentCaptor<HttpEntity<Object>> httpEntityCaptor;
+
+  @InjectMocks
+  private ClientTeamServiceImpl clientTeamService;
 
   @Before
   public void setup() {
