@@ -51,6 +51,8 @@ public class NewUserBaseRequest {
   private String skypeId;
   @JsonProperty(value = "countryCode")
   private String countryCode;
+  @JsonProperty(value = "locationCode")
+  private String locationCode;
   @JsonProperty(value = "phone")
   private String phone;
 }

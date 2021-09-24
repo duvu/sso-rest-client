@@ -39,9 +39,9 @@ public class UpdateUserBaseRequest {
   @JsonFormat(pattern = "yyyy-MM-dd")
   @JsonProperty("dateOfBirth")
   private Date dateOfBirth;
+
   @JsonProperty("avatarUrl")
   private String avatarUrl;
-
   @JsonProperty(value = "skypeId")
   private String skypeId;
   @JsonProperty(value = "countryCode")
