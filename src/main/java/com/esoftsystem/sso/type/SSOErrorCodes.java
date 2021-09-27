@@ -47,4 +47,5 @@ public interface SSOErrorCodes {
 
   String REQUESTED_TEAM_NOT_FOUND = "requested.team.not.found";
   String REQUESTED_COMPANY_NOT_FOUND = "requested.company.not.found";
+  String REQUESTED_LOCATION_NOT_FOUND = "requested.location.not.found";
 }
