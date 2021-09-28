@@ -41,9 +41,12 @@ public class FindUserSummaryRequest implements Serializable {
   private List<String> statuses;
   @JsonProperty(value = "keyword")
   private String keyword;
-
   @JsonProperty(value = "pageIndex")
   private Integer pageIndex;
   @JsonProperty(value = "pageSize")
   private Integer pageSize;
+  @JsonProperty(value = "sortField")
+  private String sortField;
+  @JsonProperty(value = "sortType")
+  private String sortType;
 }
