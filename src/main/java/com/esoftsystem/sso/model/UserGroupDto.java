@@ -9,8 +9,10 @@ package com.esoftsystem.sso.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import javax.validation.constraints.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -42,4 +44,6 @@ public class UserGroupDto implements Serializable {
   private Boolean canWrite;
   @JsonProperty(value = "canDelete")
   private Boolean canDelete;
+  @JsonProperty(value = "isPrimary")
+  private Boolean isPrimary;
 }
