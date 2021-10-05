@@ -25,6 +25,7 @@ public interface SSOErrorCodes {
   String INVALID_TOKEN = "invalid.token";
 
   String INSUFFICIENT_GROUP_PERMISSION_TO_ADD_USER = "insufficient.group.permission.to.add.user";
+  String INSUFFICIENT_GROUP_PERMISSION_TO_EDIT_USER = "insufficient.group.permission.to.edit.user";
   String INSUFFICIENT_GROUP_PERMISSION_TO_LIST_USER = "insufficient.group.permission.to.list.user";
 
   String ACTIVATE_TOKEN_ALREADY_USED = "activate.token.already.used";
