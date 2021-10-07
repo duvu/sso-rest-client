@@ -8,6 +8,7 @@ package com.esoftsystem.sso.service.impl;
 
 import com.esoftsystem.sso.model.AuthorizationDto;
 import com.esoftsystem.sso.model.request.AuthenticationRequest;
+import com.esoftsystem.sso.model.response.FailedLoginAttemptVerifyResponse;
 import com.esoftsystem.sso.service.ClientAuthenticationService;
 import com.esoftsystem.sso.service.impl.base.BaseSingleSignOnClientService;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,6 +28,7 @@ public class ClientAuthenticationServiceImpl extends BaseSingleSignOnClientServi
   private static final String AUTHENTICATE_ENDPOINT = "authentication";
   private static final String REFRESH_TOKEN_ENDPOINT = "authentication/tokens/refresh";
   private static final String VALIDATION_TOKEN_ENDPOINT = "authentication/tokens/validation";
+  private static final String VERIFY_IF_EXCEED_FAILED_LOGIN_ATTEMPTS_LIMIT_ENDPOINT = "authentication/failed-attempts/verify?userName={userName}";
 
   @Value("${single.sign.on.service.base.url}")
   private String ssoServiceUrl;
@@ -68,5 +70,10 @@ public class ClientAuthenticationServiceImpl extends BaseSingleSignOnClientServi
   public AuthorizationDto validateToken(String authenticationHeader) {
     HttpEntity<Object> requestEntity = getAuthenticatedRequestEntity(authenticationHeader, null);
     return restTemplate.exchange(ssoServiceUrl + VALIDATION_TOKEN_ENDPOINT, HttpMethod.GET, requestEntity, AuthorizationDto.class).getBody();
+  }
+
+  @Override
+  public FailedLoginAttemptVerifyResponse verifyIfExceedFailedLoginAttemptLimit(String userName) {
+    return restTemplate.getForObject(ssoServiceUrl + VERIFY_IF_EXCEED_FAILED_LOGIN_ATTEMPTS_LIMIT_ENDPOINT, FailedLoginAttemptVerifyResponse.class, userName);
   }
 }
