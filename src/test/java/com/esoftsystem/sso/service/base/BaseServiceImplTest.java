@@ -20,6 +20,7 @@ public abstract class BaseServiceImplTest {
   protected static final String REFRESH_TOKEN = "li61DOeImkIdyic5zpfCehAbjbS6dMpzW1ephJ2p";
   protected static final String TOKEN_TYPE = "Bearer";
   protected static final String AUTHORIZATION_HEADER = TOKEN_TYPE + " " + ACCESS_TOKEN;
+  protected static final String USER_NAME = "userName@email.com";
 
   @Mock
   protected RestTemplate restTemplate;

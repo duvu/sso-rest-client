@@ -8,6 +8,7 @@ package com.esoftsystem.sso.service;
 
 import com.esoftsystem.sso.model.AuthorizationDto;
 import com.esoftsystem.sso.model.request.AuthenticationRequest;
+import com.esoftsystem.sso.model.response.FailedLoginAttemptVerifyResponse;
 
 /**
  * @author Vinh Nguyen
@@ -56,4 +57,12 @@ public interface ClientAuthenticationService {
    * @return AuthorizationDto data.
    */
   AuthorizationDto validateToken(String authenticationHeader);
+
+  /**
+   * Verify if a user has exceeded failed login attempts limit.
+   *
+   * @param userName username.
+   * @return FailedLoginAttemptVerifyResponse data.
+   */
+  FailedLoginAttemptVerifyResponse verifyIfExceedFailedLoginAttemptLimit(String userName);
 }
