@@ -31,7 +31,7 @@ public class FailedLoginAttemptVerifyRequest implements Serializable {
 
   private static final long serialVersionUID = 4868013356729260390L;
 
-  @JsonProperty(value = "userName", required = true)
+  @JsonProperty(value = "username", required = true)
   private String username;
   @JsonProperty("userIpAddress")
   private String userIpAddress;
