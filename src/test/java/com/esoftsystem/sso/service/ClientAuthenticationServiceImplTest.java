@@ -8,6 +8,7 @@ package com.esoftsystem.sso.service;
 
 import com.esoftsystem.sso.model.AuthorizationDto;
 import com.esoftsystem.sso.model.request.AuthenticationRequest;
+import com.esoftsystem.sso.model.request.FailedLoginAttemptVerifyRequest;
 import com.esoftsystem.sso.model.response.FailedLoginAttemptVerifyResponse;
 import com.esoftsystem.sso.service.base.BaseServiceImplTest;
 import com.esoftsystem.sso.service.impl.ClientAuthenticationServiceImpl;
@@ -38,7 +39,7 @@ public class ClientAuthenticationServiceImplTest extends BaseServiceImplTest {
   private static final String AUTHENTICATE_ENDPOINT = "authentication";
   private static final String REFRESH_TOKEN_ENDPOINT = "authentication/tokens/refresh";
   private static final String VALIDATION_TOKEN_ENDPOINT = "authentication/tokens/validation";
-  private static final String VERIFY_IF_EXCEED_FAILED_LOGIN_LIMIT_ENDPOINT = "authentication/failed-attempts/verify?userName={userName}";
+  private static final String VERIFY_IF_EXCEED_FAILED_LOGIN_LIMIT_ENDPOINT = "authentication/failed-attempts/verify";
 
   @Mock
   private AuthorizationDto authorizationDto;
@@ -93,10 +94,9 @@ public class ClientAuthenticationServiceImplTest extends BaseServiceImplTest {
 
   @Test
   public void testVerifyIfExceedFailedLoginAttemptLimit() {
-    clientAuthenticationService.verifyIfExceedFailedLoginAttemptLimit(USER_NAME);
-    verify(restTemplate).getForObject(eq(SSO_API_BASE_URL + VERIFY_IF_EXCEED_FAILED_LOGIN_LIMIT_ENDPOINT), eq(FailedLoginAttemptVerifyResponse.class),
-                                      eq(USER_NAME));
+    FailedLoginAttemptVerifyRequest failedLoginAttemptVerifyRequest = mock(FailedLoginAttemptVerifyRequest.class);
+    clientAuthenticationService.verifyIfExceedFailedLoginAttemptLimit(failedLoginAttemptVerifyRequest);
+    verify(restTemplate).postForObject(SSO_API_BASE_URL + VERIFY_IF_EXCEED_FAILED_LOGIN_LIMIT_ENDPOINT, failedLoginAttemptVerifyRequest,
+                                       FailedLoginAttemptVerifyResponse.class);
   }
-
-
 }
