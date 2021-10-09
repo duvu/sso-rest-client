@@ -8,6 +8,7 @@ package com.esoftsystem.sso.service;
 
 import com.esoftsystem.sso.model.AuthorizationDto;
 import com.esoftsystem.sso.model.request.AuthenticationRequest;
+import com.esoftsystem.sso.model.request.FailedLoginAttemptVerifyRequest;
 import com.esoftsystem.sso.model.response.FailedLoginAttemptVerifyResponse;
 
 /**
@@ -61,8 +62,8 @@ public interface ClientAuthenticationService {
   /**
    * Verify if a user has exceeded failed login attempts limit.
    *
-   * @param userName username.
+   * @param failedLoginAttemptVerifyRequest  request username and user's ip address.
    * @return FailedLoginAttemptVerifyResponse data.
    */
-  FailedLoginAttemptVerifyResponse verifyIfExceedFailedLoginAttemptLimit(String userName);
+  FailedLoginAttemptVerifyResponse verifyIfExceedFailedLoginAttemptLimit(FailedLoginAttemptVerifyRequest failedLoginAttemptVerifyRequest);
 }
