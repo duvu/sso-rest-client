@@ -8,6 +8,7 @@ package com.esoftsystem.sso.service.impl;
 
 import java.util.List;
 
+import com.esoftsystem.sso.model.ResourceDto;
 import com.esoftsystem.sso.model.TeamDto;
 import com.esoftsystem.sso.service.ClientTeamService;
 import com.esoftsystem.sso.service.impl.base.BaseSingleSignOnClientService;
@@ -21,12 +22,15 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * @author Thanh Pham
+ * @author Chien Nguyen Tien
  * @since 1.0.0
  */
 @Service
 public class ClientTeamServiceImpl extends BaseSingleSignOnClientService implements ClientTeamService {
 
   private static final String LOAD_TEAMS_ENDPOINT = "teams";
+  private static final String LOAD_TEAMS_RESOURCES_ENDPOINT = "teams/{teamCode}/resoures";
+  private static final String PARAM_TEAM_CODE = "{teamCode}";
 
   @Value("${single.sign.on.service.base.url}")
   private String ssoServiceUrl;
@@ -47,5 +51,13 @@ public class ClientTeamServiceImpl extends BaseSingleSignOnClientService impleme
     HttpEntity<Object> requestEntity = getAuthenticatedRequestEntity(tokenType, accessToken, null);
     ParameterizedTypeReference<List<TeamDto>> listResponseType = getListParameterizedResponseType();
     return restTemplate.exchange(ssoServiceUrl + LOAD_TEAMS_ENDPOINT, HttpMethod.GET, requestEntity, listResponseType).getBody();
+  }
+
+  @Override
+  public List<ResourceDto> loadResources(String tokenType, String accessToken, String teamCode) {
+    HttpEntity<Object> requestEntity = getAuthenticatedRequestEntity(tokenType, accessToken, null);
+    ParameterizedTypeReference<List<ResourceDto>> listResponseType = getListParameterizedResponseType();
+    return restTemplate.exchange(ssoServiceUrl + LOAD_TEAMS_RESOURCES_ENDPOINT.replace(PARAM_TEAM_CODE, teamCode), HttpMethod.GET, requestEntity,
+        listResponseType).getBody();
   }
 }
