@@ -29,7 +29,7 @@ import org.springframework.web.client.RestTemplate;
 public class ClientTeamServiceImpl extends BaseSingleSignOnClientService implements ClientTeamService {
 
   private static final String LOAD_TEAMS_ENDPOINT = "teams";
-  private static final String LOAD_TEAMS_RESOURCES_ENDPOINT = "teams/{teamCode}/resoures";
+  private static final String LOAD_TEAMS_RESOURCES_ENDPOINT = "teams/{teamCode}/resources";
   private static final String PARAM_TEAM_CODE = "{teamCode}";
 
   @Value("${single.sign.on.service.base.url}")
