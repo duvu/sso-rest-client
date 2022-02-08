@@ -32,12 +32,14 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDto implements Serializable {
 
-  private static final long serialVersionUID = -6747461894998066240L;
+  private static final long serialVersionUID = -5758087111835463622L;
 
   @JsonProperty("userId")
   private Long userId;
   @JsonProperty("username")
   private String username;
+  @JsonProperty("email")
+  private String email;
   @JsonProperty("resourceName")
   private String resourceName;
   @JsonProperty("title")
@@ -70,6 +72,8 @@ public class UserDto implements Serializable {
   private String countryCode;
   @JsonProperty(value = "phone")
   private String phone;
+  @JsonProperty(value = "authenticationConfig")
+  private String authenticationConfig;
   @JsonProperty(value = "team")
   private TeamDto team;
   @JsonProperty(value = "company")

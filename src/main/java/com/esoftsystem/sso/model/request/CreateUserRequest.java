@@ -44,6 +44,7 @@ public class CreateUserRequest extends NewUserBaseRequest implements Serializabl
    * All Args Constructor.
    *
    * @param username          the username
+   * @param email             user's email
    * @param resourceName      the resourceName
    * @param title             user's title
    * @param firstName         user's first name
@@ -64,15 +65,17 @@ public class CreateUserRequest extends NewUserBaseRequest implements Serializabl
    */
   //CHECKSTYLE.OFF: ParameterNumber
   @Builder
-  public CreateUserRequest(String username, String resourceName, String title, String firstName, String middleName, String lastName,
-                           Date dateOfBirth, String password, String confirmedPassword, String avatarUrl, String skypeId, String countryCode,
-                           String locationCode, String phone, List<UserGroupDto> groups, String userStatus, String companyCode, String teamCode) {
-    super(username, resourceName, title, firstName, middleName, lastName, dateOfBirth, password, confirmedPassword, avatarUrl, skypeId, countryCode,
-          locationCode, phone);
+  public CreateUserRequest(String username, String email, String resourceName, String title, String firstName, String middleName,
+                           String lastName, Date dateOfBirth, String password, String confirmedPassword, String avatarUrl, String skypeId,
+                           String countryCode, String locationCode, String phone, List<UserGroupDto> groups, String userStatus,
+                           String companyCode, String teamCode) {
+    super(username, email, resourceName, title, firstName, middleName, lastName, dateOfBirth, password, confirmedPassword, avatarUrl, skypeId,
+          countryCode, locationCode, phone);
     this.groups = groups;
     this.userStatus = userStatus;
     this.companyCode = companyCode;
     this.teamCode = teamCode;
   }
+
 //CHECKSTYLE.ON: ParameterNumber
 }

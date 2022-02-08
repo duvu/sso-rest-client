@@ -68,9 +68,9 @@ public class UpdateUserRequest extends UpdateUserBaseRequest implements Serializ
    */
   //CHECKSTYLE.OFF: ParameterNumber
   @Builder
-  public UpdateUserRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl, String skypeId,
-                           String countryCode, String locationCode, String phone, String username, String resourceName, String userStatus,
-                           String companyCode, String teamCode, List<UserGroupDto> groups) {
+  public UpdateUserRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl,
+                           String skypeId, String countryCode, String locationCode, String phone, String username, String resourceName,
+                           String userStatus, String companyCode, String teamCode, List<UserGroupDto> groups) {
     super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone);
     this.username = username;
     this.resourceName = resourceName;
@@ -79,5 +79,6 @@ public class UpdateUserRequest extends UpdateUserBaseRequest implements Serializ
     this.teamCode = teamCode;
     this.groups = groups;
   }
+
   //CHECKSTYLE.ON: ParameterNumber
 }

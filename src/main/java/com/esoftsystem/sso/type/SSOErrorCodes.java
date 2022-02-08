@@ -38,6 +38,7 @@ public interface SSOErrorCodes {
   String AUTHENTICATION_BAD_CREDENTIALS = "authentication.bad.credential";
 
   String USER_NAME_DUPLICATED = "username.already.used";
+  String EMAIL_DUPLICATED = "email.already.used";
   String RESOURCE_NAME_USED = "resource.name.already.used";
   String RESOURCE_NAME_ALREADY_SET = "resource.name.already.set";
 
@@ -51,4 +52,5 @@ public interface SSOErrorCodes {
   String REQUESTED_LOCATION_NOT_FOUND = "requested.location.not.found";
   String AVATAR_UPLOAD_FAILED = "upload.avatar.failed";
 
+  String LDAP_PASSWORD_CHANGING_NOT_SUPPORTED = "ldap.password.changing.not.supported";
 }

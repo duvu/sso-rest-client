@@ -29,9 +29,11 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IssueResetPasswordTokenRequest implements Serializable {
 
-  private static final long serialVersionUID = 1911207048004094659L;
+  private static final long serialVersionUID = -6434101682226677184L;
   @JsonProperty(value = "username", required = true)
   private String username;
+  @JsonProperty(value = "email", required = true)
+  private String email;
   @JsonProperty(value = "resetPasswordLandingPagePrefix")
   private String resetPasswordLandingPagePrefix;
 }
