@@ -6,10 +6,15 @@
  */
 package com.esoftsystem.sso.type;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * @author Vinh Nguyen
  * @since 1.0.0
  */
 public enum AuthenticationConfig {
-  SSO_DB, LDAP;
+  @JsonProperty("SSO_DB")
+  SSO_DB,
+  @JsonProperty("LDAP")
+  LDAP;
 }

@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.esoftsystem.sso.type.AuthenticationConfig;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -76,8 +77,8 @@ public class AuthorizationDto implements Serializable {
   private String status;
   @JsonProperty("enabled")
   private Boolean enabled;
-  @JsonProperty("authenticationConfig")
-  private String authenticationConfig;
+  @JsonProperty(value = "authenticationConfig")
+  private AuthenticationConfig authenticationConfig;
   @JsonProperty("roles")
   private List<String> roles;
 }
