@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.esoftsystem.sso.type.AuthenticationConfig;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -32,7 +33,7 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AuthorizationDto implements Serializable {
 
-  private static final long serialVersionUID = 3196186876199866391L;
+  private static final long serialVersionUID = 2936535627139208517L;
   @JsonProperty("userId")
   private Long userId;
   @JsonProperty("tokenType")
@@ -43,6 +44,8 @@ public class AuthorizationDto implements Serializable {
   private String refreshToken;
   @JsonProperty("username")
   private String username;
+  @JsonProperty("email")
+  private String email;
   @JsonProperty("resourceName")
   private String resourceName;
   @JsonProperty("title")
@@ -74,6 +77,8 @@ public class AuthorizationDto implements Serializable {
   private String status;
   @JsonProperty("enabled")
   private Boolean enabled;
+  @JsonProperty(value = "authenticationConfig")
+  private AuthenticationConfig authenticationConfig;
   @JsonProperty("roles")
   private List<String> roles;
 }

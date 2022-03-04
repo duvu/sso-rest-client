@@ -6,14 +6,15 @@
  */
 package com.esoftsystem.sso.model;
 
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+import com.esoftsystem.sso.type.AuthenticationConfig;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,12 +33,14 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDto implements Serializable {
 
-  private static final long serialVersionUID = -6747461894998066240L;
+  private static final long serialVersionUID = -5758087111835463622L;
 
   @JsonProperty("userId")
   private Long userId;
   @JsonProperty("username")
   private String username;
+  @JsonProperty("email")
+  private String email;
   @JsonProperty("resourceName")
   private String resourceName;
   @JsonProperty("title")
@@ -70,6 +73,8 @@ public class UserDto implements Serializable {
   private String countryCode;
   @JsonProperty(value = "phone")
   private String phone;
+  @JsonProperty(value = "authenticationConfig")
+  private AuthenticationConfig authenticationConfig;
   @JsonProperty(value = "team")
   private TeamDto team;
   @JsonProperty(value = "company")
