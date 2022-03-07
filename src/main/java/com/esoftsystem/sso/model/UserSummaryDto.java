@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.esoftsystem.sso.type.AuthenticationConfig;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -37,6 +38,8 @@ public class UserSummaryDto implements Serializable {
   private Long userId;
   @JsonProperty("username")
   private String username;
+  @JsonProperty("email")
+  private String email;
   @JsonProperty("resourceName")
   private String resourceName;
   @JsonProperty("title")
@@ -68,6 +71,8 @@ public class UserSummaryDto implements Serializable {
   private CompanyDto company;
   @JsonProperty(value = "location")
   private LocationDto location;
+  @JsonProperty(value = "authenticationConfig")
+  private AuthenticationConfig authenticationConfig;
   @JsonProperty("groups")
   private List<UserGroupDto> groups;
 }
