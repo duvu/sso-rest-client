@@ -18,6 +18,7 @@ public interface SSOErrorCodes {
 
   String UPDATED_PASSWORD_SAME_EXISTING = "update.password.same.existing";
   String RESET_PASSWORD_TOKEN_EXPIRED = "reset.password.token.expired";
+  String INVALID_RESET_PASSWORD_REQUEST = "invalid.reset.password.request";
   String RESET_PASSWORD_TOKEN_DISABLED = "reset.password.token.disabled";
   String RESET_PASSWORD_TOKEN_USED = "reset.password.token.used";
   String RESET_TOKEN_NOT_FOUND = "reset.token.not.found";
