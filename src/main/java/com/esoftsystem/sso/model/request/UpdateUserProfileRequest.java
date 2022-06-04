@@ -9,7 +9,6 @@ package com.esoftsystem.sso.model.request;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.esoftsystem.sso.model.request.base.UpdateUserBaseRequest;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 

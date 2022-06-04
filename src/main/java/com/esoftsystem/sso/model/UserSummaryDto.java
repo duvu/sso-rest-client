@@ -65,8 +65,6 @@ public class UserSummaryDto implements Serializable {
   private String countryCode;
   @JsonProperty(value = "phone")
   private String phone;
-  @JsonProperty(value = "team")
-  private TeamDto team;
   @JsonProperty(value = "company")
   private CompanyDto company;
   @JsonProperty(value = "location")
@@ -75,4 +73,6 @@ public class UserSummaryDto implements Serializable {
   private AuthenticationConfig authenticationConfig;
   @JsonProperty("groups")
   private List<UserGroupDto> groups;
+  @JsonProperty("teams")
+  private List<UserTeamDto> teams;
 }

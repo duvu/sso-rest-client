@@ -29,6 +29,10 @@ public interface SSOErrorCodes {
   String INSUFFICIENT_GROUP_PERMISSION_TO_UPDATE_USER = "insufficient.group.permission.to.update.user";
   String INSUFFICIENT_GROUP_PERMISSION_TO_LIST_USER = "insufficient.group.permission.to.list.user";
 
+  String INSUFFICIENT_TEAM_PERMISSION_TO_ADD_USER = "insufficient.team.permission.to.add.user";
+  String INSUFFICIENT_TEAM_PERMISSION_TO_UPDATE_USER = "insufficient.team.permission.to.update.user";
+  String INSUFFICIENT_TEAM_PERMISSION_TO_LIST_USER = "insufficient.team.permission.to.list.user";
+
   String ACTIVATE_TOKEN_ALREADY_USED = "activate.token.already.used";
   String ACTIVATE_TOKEN_NOT_FOUND = "activate.token.not.found";
   String ACTIVATE_TOKEN_INVALID = "activate.token.invalid";

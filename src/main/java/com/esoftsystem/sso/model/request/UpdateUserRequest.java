@@ -6,16 +6,15 @@
  */
 package com.esoftsystem.sso.model.request;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 import com.esoftsystem.sso.model.UserGroupDto;
-import com.esoftsystem.sso.model.request.base.UpdateUserBaseRequest;
+import com.esoftsystem.sso.model.UserTeamDto;
+import com.esoftsystem.sso.model.request.base.BaseUserData;
 import com.esoftsystem.sso.type.AuthenticationConfig;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Builder;
 import lombok.Data;
@@ -31,23 +30,9 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UpdateUserRequest extends UpdateUserBaseRequest implements Serializable {
+public class UpdateUserRequest extends BaseUserData {
 
-  private static final long serialVersionUID = 8750820823201136840L;
-  @JsonProperty("username")
-  private String username;
-  @JsonProperty(value = "resourceName")
-  private String resourceName;
-  @JsonProperty(value = "userStatus")
-  private String userStatus;
-  @JsonProperty(value = "companyCode")
-  private String companyCode;
-  @JsonProperty(value = "teamCode")
-  private String teamCode;
-  @JsonProperty(value = "groups")
-  private List<UserGroupDto> groups;
-  @JsonProperty(value = "authenticationConfig")
-  private AuthenticationConfig authenticationConfig;
+  private static final long serialVersionUID = 2113745427088860690L;
 
   /**
    * All Args Constructor.
@@ -72,18 +57,12 @@ public class UpdateUserRequest extends UpdateUserBaseRequest implements Serializ
    */
   //CHECKSTYLE.OFF: ParameterNumber
   @Builder
-  public UpdateUserRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl,
-                           String skypeId, String countryCode, String locationCode, String phone, String username, String resourceName,
-                           String userStatus, String companyCode, String teamCode, List<UserGroupDto> groups,
+  public UpdateUserRequest(String username, String resourceName, String title, String firstName, String middleName, String lastName,
+                           Date dateOfBirth, String avatarUrl, String skypeId, String companyCode, String countryCode, String locationCode,
+                           String phone, String teamCode, List<UserTeamDto> teams, List<UserGroupDto> groups, String userStatus,
                            AuthenticationConfig authenticationConfig) {
-    super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone);
-    this.username = username;
-    this.resourceName = resourceName;
-    this.userStatus = userStatus;
-    this.companyCode = companyCode;
-    this.teamCode = teamCode;
-    this.groups = groups;
-    this.authenticationConfig = authenticationConfig;
+    super(username, resourceName, title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, companyCode, countryCode, locationCode,
+          phone, teamCode, teams, groups, userStatus, authenticationConfig);
   }
   //CHECKSTYLE.ON: ParameterNumber
 }

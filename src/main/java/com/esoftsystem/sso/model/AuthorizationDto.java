@@ -60,6 +60,10 @@ public class AuthorizationDto implements Serializable {
   private String company;
   @JsonProperty("team")
   private String team;
+  @JsonProperty("primaryTeam")
+  private UserTeamDto primaryTeam;
+  @JsonProperty("primaryGroup")
+  private GroupDto primaryGroup;
   @JsonProperty("location")
   private String location;
   @JsonProperty("avatarUrl")

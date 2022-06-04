@@ -1,4 +1,4 @@
-##### production jobs models which will be shared between production jobs service and its consumers.
+##### productionOrder jobs models which will be shared between productionOrder jobs service and its consumers.
 
 Build:
 
