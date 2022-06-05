@@ -17,64 +17,62 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-/**
- * @author Vinh Nguyen
- * @since 1.0
- */
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CreateUserRequest extends BaseUserData {
 
-  private static final long serialVersionUID = 3276294320221480523L;
+  private static final long serialVersionUID = -3114553423007443401L;
 
-  @JsonProperty(value = "email", required = true)
-  private String email;
   @JsonProperty(value = "password", required = true)
   private String password;
   @JsonProperty(value = "confirmedPassword", required = true)
   private String confirmedPassword;
 
   /**
-   * All Args Constructor.
+   * Instantiates a new Create user request.
    *
+   * @param title                the title
+   * @param firstName            the first name
+   * @param middleName           the middle name
+   * @param lastName             the last name
+   * @param dateOfBirth          the date of birth
+   * @param avatarUrl            the avatar url
+   * @param skypeId              the skype id
+   * @param countryCode          the country code
+   * @param locationCode         the location code
+   * @param phone                the phone
    * @param username             the username
-   * @param email                user's email
-   * @param resourceName         the resourceName
-   * @param title                user's title
-   * @param firstName            user's first name
-   * @param middleName           user's middle name
-   * @param lastName             user's last name
-   * @param dateOfBirth          user's date of birth
-   * @param password             user's password
-   * @param confirmedPassword    user's confirmed password
-   * @param avatarUrl            user's avatar
-   * @param skypeId              user's skypeId
-   * @param countryCode          user's country code
-   * @param locationCode         user's location code
-   * @param phone                user's phone number
-   * @param groups               groups to be belonged to
-   * @param userStatus           user's status
-   * @param companyCode          user's company code
-   * @param teams                teams to be belonged to
-   * @param authenticationConfig which authentication will be applied for this user
+   * @param resourceName         the resource name
+   * @param companyCode          the company code
+   * @param email                the email
+   * @param teamCode             the team code
+   * @param teams                the teams
+   * @param groups               the groups
+   * @param userStatus           the user status
+   * @param authenticationConfig the authentication config
+   * @param password             the password
+   * @param confirmedPassword    the confirmed password
    */
-  //CHECKSTYLE.OFF: ParameterNumber
   @Builder
-  public CreateUserRequest(String username, String resourceName, String title, String firstName, String middleName, String lastName,
-                           Date dateOfBirth, String avatarUrl, String skypeId, String companyCode, String countryCode, String locationCode,
-                           String phone, String teamCode, List<UserTeamDto> teams, List<UserGroupDto> groups, String userStatus,
-                           AuthenticationConfig authenticationConfig, String email, String password, String confirmedPassword) {
-    super(username, resourceName, title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, companyCode, countryCode, locationCode,
-          phone, teamCode, teams, groups, userStatus, authenticationConfig);
-    this.email = email;
+  public CreateUserRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl, String skypeId,
+                           String countryCode, String locationCode, String phone, String username, String resourceName, String companyCode,
+                           String email, String teamCode, List<UserTeamDto> teams, List<UserGroupDto> groups, String userStatus,
+                           AuthenticationConfig authenticationConfig, String password, String confirmedPassword) {
+
+    super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone, username, resourceName,
+          companyCode, email, teamCode, teams, groups, userStatus, authenticationConfig);
+
     this.password = password;
     this.confirmedPassword = confirmedPassword;
   }
-  //CHECKSTYLE.ON: ParameterNumber
 }

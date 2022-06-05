@@ -22,7 +22,6 @@ public interface SSOErrorCodes {
   String RESET_PASSWORD_TOKEN_DISABLED = "reset.password.token.disabled";
   String RESET_PASSWORD_TOKEN_USED = "reset.password.token.used";
   String RESET_TOKEN_NOT_FOUND = "reset.token.not.found";
-
   String INVALID_TOKEN = "invalid.token";
 
   String INSUFFICIENT_GROUP_PERMISSION_TO_ADD_USER = "insufficient.group.permission.to.add.user";
@@ -53,6 +52,7 @@ public interface SSOErrorCodes {
   String USER_DISABLED = "user.disabled";
 
   String REQUESTED_TEAM_NOT_FOUND = "requested.team.not.found";
+  String REQUESTED_GROUP_NOT_FOUND = "requested.group.not.found";
   String REQUESTED_COMPANY_NOT_FOUND = "requested.company.not.found";
   String REQUESTED_LOCATION_NOT_FOUND = "requested.location.not.found";
   String AVATAR_UPLOAD_FAILED = "upload.avatar.failed";

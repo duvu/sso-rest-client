@@ -6,20 +6,19 @@
  */
 package com.esoftsystem.sso.model.request.base;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 import com.esoftsystem.sso.model.UserGroupDto;
 import com.esoftsystem.sso.model.UserTeamDto;
 import com.esoftsystem.sso.type.AuthenticationConfig;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -28,39 +27,19 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BaseUserData implements Serializable {
+public class BaseUserData extends BaseUserProfileData {
 
   @JsonProperty(value = "username", required = true)
   private String username;
   @JsonProperty(value = "resourceName")
   private String resourceName;
-
-  @JsonProperty("title")
-  private String title;
-  @JsonProperty("firstName")
-  private String firstName;
-  @JsonProperty("middleName")
-  private String middleName;
-  @JsonProperty("lastName")
-  private String lastName;
-  @JsonFormat(pattern = "yyyy-MM-dd")
-  @JsonProperty("dateOfBirth")
-  private Date dateOfBirth;
-  @JsonProperty("avatarUrl")
-  private String avatarUrl;
-  @JsonProperty(value = "skypeId")
-  private String skypeId;
   @JsonProperty(value = "companyCode")
   private String companyCode;
-  @JsonProperty(value = "countryCode")
-  private String countryCode;
-  @JsonProperty(value = "locationCode")
-  private String locationCode;
-  @JsonProperty(value = "phone")
-  private String phone;
+  @JsonProperty(value = "email", required = true)
+  private String email;
 
   @Deprecated
   @JsonProperty(value = "teamCode")
@@ -74,4 +53,45 @@ public class BaseUserData implements Serializable {
   private String userStatus;
   @JsonProperty(value = "authenticationConfig")
   private AuthenticationConfig authenticationConfig;
+
+  /**
+   * Instantiates a new Base user data.
+   *
+   * @param title                the title
+   * @param firstName            the first name
+   * @param middleName           the middle name
+   * @param lastName             the last name
+   * @param dateOfBirth          the date of birth
+   * @param avatarUrl            the avatar url
+   * @param skypeId              the skype id
+   * @param countryCode          the country code
+   * @param locationCode         the location code
+   * @param phone                the phone
+   * @param username             the username
+   * @param resourceName         the resource name
+   * @param companyCode          the company code
+   * @param email                the email
+   * @param teamCode             the team code
+   * @param teams                the teams
+   * @param groups               the groups
+   * @param userStatus           the user status
+   * @param authenticationConfig the authentication config
+   */
+  //CHECKSTYLE.OFF: ParameterNumber
+  public BaseUserData(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl,
+                      String skypeId, String countryCode, String locationCode, String phone, String username, String resourceName,
+                      String companyCode, String email, String teamCode, List<UserTeamDto> teams,
+                      List<UserGroupDto> groups, String userStatus, AuthenticationConfig authenticationConfig) {
+    super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone);
+    this.username = username;
+    this.resourceName = resourceName;
+    this.companyCode = companyCode;
+    this.email = email;
+    this.teamCode = teamCode;
+    this.teams = teams;
+    this.groups = groups;
+    this.userStatus = userStatus;
+    this.authenticationConfig = authenticationConfig;
+  }
+  //CHECKSTYLE.ON: ParameterNumber
 }

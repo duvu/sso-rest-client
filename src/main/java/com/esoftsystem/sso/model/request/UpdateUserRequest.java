@@ -21,10 +21,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-/**
- * @author Vinh Nguyen
- * @since 1.0
- */
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -32,37 +28,38 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UpdateUserRequest extends BaseUserData {
 
-  private static final long serialVersionUID = 2113745427088860690L;
+  private static final long serialVersionUID = -3810975507942930879L;
 
   /**
-   * All Args Constructor.
+   * Instantiates a new Update user request.
    *
-   * @param title                user's title
-   * @param firstName            user's first name
-   * @param middleName           user's middle name
-   * @param lastName             user's last name
-   * @param dateOfBirth          user's date of birth
-   * @param avatarUrl            user's avatar
-   * @param skypeId              user's skypeId
-   * @param countryCode          user's country code
-   * @param locationCode         user's location code
-   * @param phone                user's phone number
+   * @param title                the title
+   * @param firstName            the first name
+   * @param middleName           the middle name
+   * @param lastName             the last name
+   * @param dateOfBirth          the date of birth
+   * @param avatarUrl            the avatar url
+   * @param skypeId              the skype id
+   * @param countryCode          the country code
+   * @param locationCode         the location code
+   * @param phone                the phone
    * @param username             the username
-   * @param resourceName         the resourceName
-   * @param teamCode             user's team code
-   * @param companyCode          user's company code
-   * @param groups               user's groups
-   * @param userStatus           user's status
-   * @param authenticationConfig which authentication will be applied for this user
+   * @param resourceName         the resource name
+   * @param companyCode          the company code
+   * @param email                the email
+   * @param teamCode             the team code
+   * @param teams                the teams
+   * @param groups               the groups
+   * @param userStatus           the user status
+   * @param authenticationConfig the authentication config
    */
-  //CHECKSTYLE.OFF: ParameterNumber
   @Builder
-  public UpdateUserRequest(String username, String resourceName, String title, String firstName, String middleName, String lastName,
-                           Date dateOfBirth, String avatarUrl, String skypeId, String companyCode, String countryCode, String locationCode,
-                           String phone, String teamCode, List<UserTeamDto> teams, List<UserGroupDto> groups, String userStatus,
+  public UpdateUserRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl, String skypeId,
+                           String countryCode, String locationCode, String phone, String username, String resourceName, String companyCode,
+                           String email, String teamCode, List<UserTeamDto> teams, List<UserGroupDto> groups, String userStatus,
                            AuthenticationConfig authenticationConfig) {
-    super(username, resourceName, title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, companyCode, countryCode, locationCode,
-          phone, teamCode, teams, groups, userStatus, authenticationConfig);
+
+    super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone, username, resourceName,
+          companyCode, email, teamCode, teams, groups, userStatus, authenticationConfig);
   }
-  //CHECKSTYLE.ON: ParameterNumber
 }

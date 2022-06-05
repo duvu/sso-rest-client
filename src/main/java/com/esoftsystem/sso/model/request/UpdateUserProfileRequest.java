@@ -9,6 +9,7 @@ package com.esoftsystem.sso.model.request;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.esoftsystem.sso.model.request.base.BaseUserProfileData;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -19,6 +20,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
+ * The type Update user profile request.
+ *
  * @author Vinh Nguyen
  * @since 1.0.0
  */
@@ -28,9 +31,10 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UpdateUserProfileRequest extends UpdateUserBaseRequest implements Serializable {
+public class UpdateUserProfileRequest extends BaseUserProfileData implements Serializable {
 
-  private static final long serialVersionUID = 8022115544361163047L;
+  private static final long serialVersionUID = 3580095140300711972L;
+
   private String currentPassword;
   private String newPassword;
 
@@ -50,14 +54,12 @@ public class UpdateUserProfileRequest extends UpdateUserBaseRequest implements S
    * @param currentPassword submitted current password for checking before changing to new password.
    * @param newPassword     new password to change.
    */
-  //CHECKSTYLE.OFF: ParameterNumber
   @Builder
-  public UpdateUserProfileRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth,
-                                  String avatarUrl, String skypeId, String countryCode, String locationCode, String phone,
-                                  String currentPassword, String newPassword) {
+  public UpdateUserProfileRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl,
+                                  String skypeId, String countryCode, String locationCode, String phone, String currentPassword, String newPassword) {
+
     super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone);
     this.currentPassword = currentPassword;
     this.newPassword = newPassword;
   }
-  //CHECKSTYLE.ON: ParameterNumber
 }
