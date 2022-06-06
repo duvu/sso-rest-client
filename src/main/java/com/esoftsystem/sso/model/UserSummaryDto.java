@@ -65,6 +65,9 @@ public class UserSummaryDto implements Serializable {
   private String countryCode;
   @JsonProperty(value = "phone")
   private String phone;
+  @Deprecated
+  @JsonProperty(value = "team")
+  private TeamDto team;
   @JsonProperty(value = "company")
   private CompanyDto company;
   @JsonProperty(value = "location")
