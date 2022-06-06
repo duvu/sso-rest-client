@@ -1,4 +1,4 @@
-##### productionOrder jobs models which will be shared between productionOrder jobs service and its consumers.
+##### sso-authentication models which will be shared between sso-authentication service and its consumers.
 
 Build:
 
