@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -40,7 +39,9 @@ public class BaseUserData extends BaseUserProfileData {
   private String companyCode;
   @JsonProperty(value = "email", required = true)
   private String email;
-
+  /**
+   * @deprecated teamCode is no longer needed. Need to update lychee-fe to send teams instead.
+   */
   @Deprecated
   @JsonProperty(value = "teamCode")
   private String teamCode;
@@ -77,7 +78,6 @@ public class BaseUserData extends BaseUserProfileData {
    * @param userStatus           the user status
    * @param authenticationConfig the authentication config
    */
-  //CHECKSTYLE.OFF: ParameterNumber
   public BaseUserData(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl,
                       String skypeId, String countryCode, String locationCode, String phone, String username, String resourceName,
                       String companyCode, String email, String teamCode, List<UserTeamDto> teams,
@@ -93,5 +93,4 @@ public class BaseUserData extends BaseUserProfileData {
     this.userStatus = userStatus;
     this.authenticationConfig = authenticationConfig;
   }
-  //CHECKSTYLE.ON: ParameterNumber
 }

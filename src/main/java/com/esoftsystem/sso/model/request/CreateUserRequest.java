@@ -23,6 +23,10 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+/**
+ * @author Vinh Nguyen
+ * @since 1.1.0
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
