@@ -21,6 +21,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+/**
+ * The type Update user profile request.
+ *
+ * @author Vinh Nguyen
+ * @since 1.0
+ */
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
