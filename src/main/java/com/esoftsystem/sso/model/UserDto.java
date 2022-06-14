@@ -33,7 +33,7 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDto implements Serializable {
 
-  private static final long serialVersionUID = -5758087111835463622L;
+  private static final long serialVersionUID = 585666114732350700L;
 
   @JsonProperty("userId")
   private Long userId;
@@ -84,4 +84,6 @@ public class UserDto implements Serializable {
 
   @JsonProperty("groups")
   private List<UserGroupDto> groups;
+  @JsonProperty("teams")
+  private List<UserTeamDto> teams;
 }
