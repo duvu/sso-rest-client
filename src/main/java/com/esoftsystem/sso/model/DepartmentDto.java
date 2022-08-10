@@ -1,7 +1,7 @@
 /*
  * @(#)DepartmentDto.java
  *
- * Copyright 2021 by esoft systems (tm).
+ * Copyright 2022 by esoft systems (tm).
  * All rights reserved.
  */
 package com.esoftsystem.sso.model;
@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author Vu D.
- * @since 1.0
+ * @since 1.1.3
  */
 @Data
 @Builder
