@@ -1,5 +1,5 @@
 /*
- * @(#)RolesUpdateRequest.java
+ * @(#)RolesUpdateResponse.java
  *
  * Copyright 2022 by esoft systems (tm).
  * All rights reserved.
