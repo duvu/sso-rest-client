@@ -51,6 +51,8 @@ public interface SSOErrorCodes {
   String USER_ACTIVATION_PENDING = "user.activation.pending";
   String USER_DISABLED = "user.disabled";
 
+  String ACCESS_DENIED_EXCEPTION = "access.denied.exception";
+
   String REQUESTED_TEAM_NOT_FOUND = "requested.team.not.found";
   String REQUESTED_GROUP_NOT_FOUND = "requested.group.not.found";
   String REQUESTED_ROLE_NOT_FOUND = "requested.role.not.found";
@@ -59,4 +61,6 @@ public interface SSOErrorCodes {
   String AVATAR_UPLOAD_FAILED = "upload.avatar.failed";
 
   String LDAP_PASSWORD_CHANGING_NOT_SUPPORTED = "ldap.password.changing.not.supported";
+
+  String REQUESTED_CONSTRAINS_NOT_EMPTY = "requested.constrains.not.empty";
 }
