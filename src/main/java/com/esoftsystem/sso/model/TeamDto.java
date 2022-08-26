@@ -29,10 +29,16 @@ import lombok.NoArgsConstructor;
 public class TeamDto implements Serializable {
 
   private static final long serialVersionUID = -5672124139056221361L;
+
   @JsonProperty("teamCode")
   private String teamCode;
+
   @JsonProperty("teamName")
   private String teamName;
+
   @JsonProperty("teamDescription")
   private String teamDescription;
+
+  @JsonProperty("isProduction")
+  private boolean isProduction;
 }

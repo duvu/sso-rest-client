@@ -16,7 +16,7 @@ import java.util.List;
  * @since 1.0
  */
 public class AuthType {
-
+  public static final String ROLE_SYSTEM_ADMINISTRATOR = "ROLE_SYSTEM_ADMINISTRATOR";
   public static final String ROLE_PRODUCTION_JOB_USER = "ROLE_PRODUCTION_JOB_USER";
   public static final String ROLE_PRODUCTION_JOB_ADMIN = "ROLE_PRODUCTION_JOB_ADMIN";
 

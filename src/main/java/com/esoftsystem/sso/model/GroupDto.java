@@ -39,9 +39,6 @@ public class GroupDto implements Serializable {
   @JsonProperty("displayName")
   private String displayName;
 
-  @JsonProperty("departmentId")
-  private Long departmentId;
-
   @JsonProperty("parentGroupId")
   private Long parentGroupId;
 
