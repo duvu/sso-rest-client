@@ -29,35 +29,35 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TeamGroupDto implements Serializable {
 
-      private static final long serialVersionUID = -5672124139056221361L;
+  private static final long serialVersionUID = -5672124139056221361L;
 
-      @JsonProperty("teamCode")
-      private String teamCode;
+  @JsonProperty("teamCode")
+  private String teamCode;
 
-      @JsonProperty("teamName")
-      private String teamName;
+  @JsonProperty("teamName")
+  private String teamName;
 
-      @JsonProperty("teamDescription")
-      private String teamDescription;
+  @JsonProperty("teamDescription")
+  private String teamDescription;
 
-      @JsonProperty("isProduction")
-      private boolean isProduction;
+  @JsonProperty("isProduction")
+  private boolean isProduction;
 
-      @JsonProperty("groupId")
-      private Long groupId;
+  @JsonProperty("groupId")
+  private Long groupId;
 
-      @JsonProperty("groupName")
-      private String groupName;
+  @JsonProperty("groupName")
+  private String groupName;
 
-      @JsonProperty("groupDescription")
-      private String groupDescription;
+  @JsonProperty("groupDescription")
+  private String groupDescription;
 
-      @JsonProperty("parentGroupId")
-      private Long parentGroupId;
+  @JsonProperty("parentGroupId")
+  private Long parentGroupId;
 
-      @JsonProperty("parentGroupName")
-      private String parentGroupName;
+  @JsonProperty("parentGroupName")
+  private String parentGroupName;
 
-      @JsonProperty("parentGroupDisplayName")
-      private String parentGroupDisplayName;
+  @JsonProperty("parentGroupDisplayName")
+  private String parentGroupDisplayName;
 }

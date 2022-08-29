@@ -51,7 +51,7 @@ public interface SSOErrorCodes {
   String USER_ACTIVATION_PENDING = "user.activation.pending";
   String USER_DISABLED = "user.disabled";
 
-  String ACCESS_DENIED_EXCEPTION = "access.denied.exception";
+  String ACCESS_DENIED = "access.denied";
 
   String REQUESTED_TEAM_NOT_FOUND = "requested.team.not.found";
   String REQUESTED_GROUP_NOT_FOUND = "requested.group.not.found";
