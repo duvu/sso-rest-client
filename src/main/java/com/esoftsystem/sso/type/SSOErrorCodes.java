@@ -62,5 +62,5 @@ public interface SSOErrorCodes {
 
   String LDAP_PASSWORD_CHANGING_NOT_SUPPORTED = "ldap.password.changing.not.supported";
 
-  String REQUESTED_CONSTRAINS_NOT_EMPTY = "requested.constrains.not.empty";
+  String COULD_NOT_DELETE_TEAM_WHEN_STILL_HAS_USER = "requested.could.not.delete.team.when.still.has.user";
 }
