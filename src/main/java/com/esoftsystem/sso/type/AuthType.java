@@ -30,12 +30,10 @@ public class AuthType {
   public static final String ROLE_PRODUCTION_JOB_QC                   = "ROLE_PRODUCTION_JOB_QC";
   public static final String ROLE_PRODUCTION_JOB_INTERNATIONAL_USER   = "ROLE_PRODUCTION_JOB_INTERNATIONAL_USER";
 
-  public static final String ROLE_USER_MANAGEMENT_LIST_VIEW           = "ROLE_USER_MANAGEMENT_LIST_VIEW";
-  public static final String ROLE_USER_MANAGEMENT_LIST_MANAGE         = "ROLE_USER_MANAGEMENT_LIST_MANAGE";
-  public static final String ROLE_USER_MANAGEMENT_LIST_ADMIN          = "ROLE_USER_MANAGEMENT_LIST_ADMIN";
-  public static final String ROLE_USER_MANAGEMENT_ADD_EDIT_VIEW       = "ROLE_USER_MANAGEMENT_ADD_EDIT_VIEW";
-  public static final String ROLE_USER_MANAGEMENT_ADD_EDIT_MANAGE     = "ROLE_USER_MANAGEMENT_ADD_EDIT_MANAGE";
-  public static final String ROLE_USER_MANAGEMENT_ADD_EDIT_ADMIN      = "ROLE_USER_MANAGEMENT_ADD_EDIT_ADMIN";
+  public static final String ROLE_USER_MANAGEMENT_VIEW                = "ROLE_USER_MANAGEMENT_VIEW";
+  public static final String ROLE_USER_MANAGEMENT_MANAGE              = "ROLE_USER_MANAGEMENT_MANAGE";
+  public static final String ROLE_USER_MANAGEMENT_ADMIN               = "ROLE_USER_MANAGEMENT_ADMIN";
+
   public static final String ROLE_JOB_OVERVIEW_VIEW                   = "ROLE_JOB_OVERVIEW_VIEW";
   public static final String ROLE_JOB_OVERVIEW_MANAGE                 = "ROLE_JOB_OVERVIEW_MANAGE";
   public static final String ROLE_JOB_OVERVIEW_ADMIN                  = "ROLE_JOB_OVERVIEW_ADMIN";
