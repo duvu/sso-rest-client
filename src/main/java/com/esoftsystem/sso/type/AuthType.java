@@ -54,16 +54,7 @@ public class AuthType {
   public static final String ROLE_CLIENT_TEMPERATURE_ADMIN            = "ROLE_CLIENT_TEMPERATURE_ADMIN";
 
 
-  public static final List<String> TEAM_ADMIN_ROLES = Arrays.asList(AuthType.ROLE_PRODUCTION_JOB_ADMIN,
-                                                                    AuthType.ROLE_PRODUCTION_JOB_PRODUCT_MANAGER,
-                                                                    AuthType.ROLE_PRODUCTION_JOB_SUPERVISOR,
-                                                                    AuthType.ROLE_PRODUCTION_JOB_TEAM_LEADER);
-
-  public static final List<String> TEAM_MANAGING_ROLES = Arrays.asList(AuthType.ROLE_PRODUCTION_JOB_ADMIN,
-                                                                       AuthType.ROLE_PRODUCTION_JOB_PRODUCT_MANAGER,
-                                                                       AuthType.ROLE_PRODUCTION_JOB_SUPERVISOR);
-
-  public static List<String> getAdminRoles() {
-    return Arrays.asList(ROLE_PRODUCTION_JOB_ADMIN, ROLE_PRODUCTION_JOB_PRODUCT_MANAGER);
-  }
+  public static final List<String> SINGLE_TEAM_MANAGING_ROLES = Arrays.asList(ROLE_PRODUCTION_JOB_ADMIN, ROLE_PRODUCTION_JOB_PRODUCT_MANAGER,
+                                                                              ROLE_PRODUCTION_JOB_SUPERVISOR, ROLE_PRODUCTION_JOB_TEAM_LEADER);
+  public static final List<String> MULTIPLE_TEAMS_MANAGING_ROLES = List.of(ROLE_PRODUCTION_JOB_ADMIN, ROLE_PRODUCTION_JOB_PRODUCT_MANAGER);
 }
