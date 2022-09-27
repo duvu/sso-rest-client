@@ -39,12 +39,7 @@ public class BaseUserData extends BaseUserProfileData {
   private String companyCode;
   @JsonProperty(value = "email", required = true)
   private String email;
-  /**
-   * @deprecated teamCode is no longer needed. Need to update lychee-fe to send teams instead.
-   */
-  @Deprecated
-  @JsonProperty(value = "teamCode")
-  private String teamCode;
+
   @JsonProperty(value = "teams")
   private List<UserTeamDto> teams;
   @JsonProperty(value = "groups")
@@ -72,7 +67,6 @@ public class BaseUserData extends BaseUserProfileData {
    * @param resourceName         the resource name
    * @param companyCode          the company code
    * @param email                the email
-   * @param teamCode             the team code
    * @param teams                the teams
    * @param groups               the groups
    * @param userStatus           the user status
@@ -80,14 +74,13 @@ public class BaseUserData extends BaseUserProfileData {
    */
   public BaseUserData(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl,
                       String skypeId, String countryCode, String locationCode, String phone, String username, String resourceName,
-                      String companyCode, String email, String teamCode, List<UserTeamDto> teams,
+                      String companyCode, String email, List<UserTeamDto> teams,
                       List<UserGroupDto> groups, String userStatus, AuthenticationConfig authenticationConfig) {
     super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone);
     this.username = username;
     this.resourceName = resourceName;
     this.companyCode = companyCode;
     this.email = email;
-    this.teamCode = teamCode;
     this.teams = teams;
     this.groups = groups;
     this.userStatus = userStatus;
