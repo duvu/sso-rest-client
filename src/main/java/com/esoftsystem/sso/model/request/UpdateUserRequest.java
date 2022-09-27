@@ -53,7 +53,6 @@ public class UpdateUserRequest extends BaseUserData {
    * @param resourceName         the resource name
    * @param companyCode          the company code
    * @param email                the email
-   * @param teamCode             the team code
    * @param teams                the teams
    * @param groups               the groups
    * @param userStatus           the user status
@@ -62,10 +61,10 @@ public class UpdateUserRequest extends BaseUserData {
   @Builder
   public UpdateUserRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl, String skypeId,
                            String countryCode, String locationCode, String phone, String username, String resourceName, String companyCode,
-                           String email, String teamCode, List<UserTeamDto> teams, List<UserGroupDto> groups, String userStatus,
+                           String email, List<UserTeamDto> teams, List<UserGroupDto> groups, String userStatus,
                            AuthenticationConfig authenticationConfig) {
 
     super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone, username, resourceName,
-          companyCode, email, teamCode, teams, groups, userStatus, authenticationConfig);
+          companyCode, email, teams, groups, userStatus, authenticationConfig);
   }
 }
