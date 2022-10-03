@@ -62,6 +62,7 @@ public class CreateUserRequest extends BaseUserData {
    * @param teams                the teams
    * @param groups               the groups
    * @param userStatus           the user status
+   * @param fullTimeEmployee     true if user is esoft's full time employee
    * @param authenticationConfig the authentication config
    * @param password             the password
    * @param confirmedPassword    the confirmed password
@@ -69,11 +70,11 @@ public class CreateUserRequest extends BaseUserData {
   @Builder
   public CreateUserRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl, String skypeId,
                            String countryCode, String locationCode, String phone, String username, String resourceName, String companyCode,
-                           String email, List<UserTeamDto> teams, List<UserGroupDto> groups, String userStatus,
+                           String email, List<UserTeamDto> teams, List<UserGroupDto> groups, String userStatus, Boolean fullTimeEmployee,
                            AuthenticationConfig authenticationConfig, String password, String confirmedPassword) {
 
     super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone, username, resourceName,
-          companyCode, email, teams, groups, userStatus, authenticationConfig);
+          companyCode, email, teams, groups, userStatus, fullTimeEmployee, authenticationConfig);
 
     this.password = password;
     this.confirmedPassword = confirmedPassword;
