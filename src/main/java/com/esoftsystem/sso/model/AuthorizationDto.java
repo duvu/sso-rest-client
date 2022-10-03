@@ -87,4 +87,7 @@ public class AuthorizationDto implements Serializable {
   private AuthenticationConfig authenticationConfig;
   @JsonProperty("roles")
   private List<String> roles;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+  @JsonProperty("userUpdatedAt")
+  private Date userUpdatedAt;
 }
