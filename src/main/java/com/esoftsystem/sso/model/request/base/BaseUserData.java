@@ -47,6 +47,8 @@ public class BaseUserData extends BaseUserProfileData {
 
   @JsonProperty(value = "userStatus")
   private String userStatus;
+  @JsonProperty("fullTimeEmployee")
+  private Boolean fullTimeEmployee;
   @JsonProperty(value = "authenticationConfig")
   private AuthenticationConfig authenticationConfig;
 
@@ -70,12 +72,13 @@ public class BaseUserData extends BaseUserProfileData {
    * @param teams                the teams
    * @param groups               the groups
    * @param userStatus           the user status
+   * @param fullTimeEmployee     true if user is esoft's full time employee
    * @param authenticationConfig the authentication config
    */
   public BaseUserData(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl,
                       String skypeId, String countryCode, String locationCode, String phone, String username, String resourceName,
                       String companyCode, String email, List<UserTeamDto> teams,
-                      List<UserGroupDto> groups, String userStatus, AuthenticationConfig authenticationConfig) {
+                      List<UserGroupDto> groups, String userStatus, Boolean fullTimeEmployee, AuthenticationConfig authenticationConfig) {
     super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone);
     this.username = username;
     this.resourceName = resourceName;
@@ -84,6 +87,7 @@ public class BaseUserData extends BaseUserProfileData {
     this.teams = teams;
     this.groups = groups;
     this.userStatus = userStatus;
+    this.fullTimeEmployee = fullTimeEmployee;
     this.authenticationConfig = authenticationConfig;
   }
 }

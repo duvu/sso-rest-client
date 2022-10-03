@@ -56,15 +56,16 @@ public class UpdateUserRequest extends BaseUserData {
    * @param teams                the teams
    * @param groups               the groups
    * @param userStatus           the user status
+   * @param fullTimeEmployee     true if user is esoft's full time employee
    * @param authenticationConfig the authentication config
    */
   @Builder
   public UpdateUserRequest(String title, String firstName, String middleName, String lastName, Date dateOfBirth, String avatarUrl, String skypeId,
                            String countryCode, String locationCode, String phone, String username, String resourceName, String companyCode,
-                           String email, List<UserTeamDto> teams, List<UserGroupDto> groups, String userStatus,
+                           String email, List<UserTeamDto> teams, List<UserGroupDto> groups, String userStatus, Boolean fullTimeEmployee,
                            AuthenticationConfig authenticationConfig) {
 
     super(title, firstName, middleName, lastName, dateOfBirth, avatarUrl, skypeId, countryCode, locationCode, phone, username, resourceName,
-          companyCode, email, teams, groups, userStatus, authenticationConfig);
+          companyCode, email, teams, groups, userStatus, fullTimeEmployee, authenticationConfig);
   }
 }

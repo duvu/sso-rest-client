@@ -58,6 +58,8 @@ public class UserDto implements Serializable {
   private String avatarUrl;
   @JsonProperty("status")
   private String status;
+  @JsonProperty("fullTimeEmployee")
+  private Boolean fullTimeEmployee;
   @JsonProperty("enabled")
   private Boolean enabled;
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

@@ -33,7 +33,7 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AuthorizationDto implements Serializable {
 
-  private static final long serialVersionUID = 2936535627139208517L;
+  private static final long serialVersionUID = -3923385647311826644L;
   @JsonProperty("userId")
   private Long userId;
   @JsonProperty("tokenType")
@@ -66,6 +66,8 @@ public class AuthorizationDto implements Serializable {
   private GroupDto primaryGroup;
   @JsonProperty("location")
   private String location;
+  @JsonProperty("fullTimeEmployee")
+  private Boolean fullTimeEmployee;
   @JsonProperty("avatarUrl")
   private String avatarUrl;
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
@@ -85,4 +87,7 @@ public class AuthorizationDto implements Serializable {
   private AuthenticationConfig authenticationConfig;
   @JsonProperty("roles")
   private List<String> roles;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+  @JsonProperty("userUpdatedAt")
+  private Date userUpdatedAt;
 }
