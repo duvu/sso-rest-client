@@ -40,6 +40,9 @@ public class UserGroupDto implements Serializable {
   @JsonProperty(value = "displayName")
   private String displayName;
 
+  @JsonProperty(value = "parentGroupId")
+  private Long parentGroupId;
+
   @JsonProperty(value = "fullControl")
   private Boolean fullControl;
   @JsonProperty(value = "canRead")
