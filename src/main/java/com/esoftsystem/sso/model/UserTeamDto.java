@@ -38,17 +38,8 @@ public class UserTeamDto implements Serializable {
   @JsonProperty(value = "teamName")
   private String teamName;
 
-  @JsonProperty(value = "canRead")
-  private Boolean canRead;
-
-  @JsonProperty(value = "canWrite")
-  private Boolean canWrite;
-
-  @JsonProperty(value = "canDelete")
-  private Boolean canDelete;
-
-  @JsonProperty(value = "fullControl")
-  private Boolean fullControl;
+  @JsonProperty(value = "groupId")
+  private Long groupId;
 
   @JsonProperty(value = "isPrimary")
   private Boolean isPrimary;
