@@ -19,6 +19,7 @@ public class AuthType {
   public static final String ROLE_SYSTEM_ADMINISTRATOR                = "ROLE_SYSTEM_ADMINISTRATOR";
   public static final String ROLE_PRODUCTION_JOB_USER                 = "ROLE_PRODUCTION_JOB_USER";
   public static final String ROLE_PRODUCTION_JOB_ADMIN                = "ROLE_PRODUCTION_JOB_ADMIN";
+  public static final String ROLE_IT_ADMIN                            = "ROLE_IT_ADMIN";
 
   public static final String ROLE_PRODUCTION_JOB_PRODUCT_MANAGER      = "ROLE_PRODUCTION_JOB_PRODUCT_MANAGER";
   public static final String ROLE_PRODUCTION_JOB_SUPERVISOR           = "ROLE_PRODUCTION_JOB_SUPERVISOR";
