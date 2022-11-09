@@ -58,6 +58,10 @@ public class AuthorizationDto implements Serializable {
   private String lastName;
   @JsonProperty("company")
   private String company;
+
+  @JsonProperty("teams")
+  private List<TeamRoleDto> teams;
+
   @JsonProperty("team")
   private String team;
   @JsonProperty("primaryTeam")
