@@ -1,3 +1,10 @@
+/*
+ * @(#)TeamRoleDto.java
+ *
+ * Copyright 2022 by esoft systems (tm).
+ * All rights reserved.
+ */
+
 package com.esoftsystem.sso.model;
 
 import java.io.Serializable;
@@ -11,6 +18,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+/**
+ * @author duquangvu
+ * @since 1.0.0
+ */
 
 @Data
 @Builder
