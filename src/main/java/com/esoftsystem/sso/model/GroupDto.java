@@ -7,6 +7,7 @@
 package com.esoftsystem.sso.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -47,4 +48,8 @@ public class GroupDto implements Serializable {
 
   @JsonProperty("parentGroupDisplayName")
   private String parentGroupDisplayName;
+
+  @JsonProperty("roles")
+  private List<RoleDto> roles;
+
 }
