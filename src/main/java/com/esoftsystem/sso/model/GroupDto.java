@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -26,6 +27,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(exclude = {"parentGroupId", "parentGroupName", "parentGroupDisplayName", "roles"})
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GroupDto implements Serializable {
@@ -51,5 +53,4 @@ public class GroupDto implements Serializable {
 
   @JsonProperty("roles")
   private List<RoleDto> roles;
-
 }
