@@ -64,5 +64,5 @@ public interface SSOErrorCodes {
 
   String COULD_NOT_DELETE_TEAM_WHEN_STILL_HAS_USER = "requested.could.not.delete.team.when.still.has.user";
 
-  String NO_PERMISSION_TO_CREATE_USER_ON_TEAMS = "You don\'t have permission to create user on teams";
+  String NO_PERMISSION_TO_CREATE_USER_ON_TEAMS = "no.permission.to.create.user.on.teams";
 }

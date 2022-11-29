@@ -58,13 +58,4 @@ public class AuthType {
   public static final List<String> SINGLE_TEAM_MANAGING_ROLES = Arrays.asList(ROLE_PRODUCTION_JOB_ADMIN, ROLE_PRODUCTION_JOB_PRODUCT_MANAGER,
                                                                               ROLE_PRODUCTION_JOB_SUPERVISOR, ROLE_PRODUCTION_JOB_TEAM_LEADER);
   public static final List<String> MULTIPLE_TEAMS_MANAGING_ROLES = List.of(ROLE_PRODUCTION_JOB_ADMIN, ROLE_PRODUCTION_JOB_PRODUCT_MANAGER);
-
-  public static final String[] MULTIPLE_ROLES = {
-    AuthType.ROLE_SYSTEM_ADMINISTRATOR,
-    AuthType.ROLE_PRODUCTION_JOB_ADMIN,
-    AuthType.ROLE_IT_ADMIN,
-    AuthType.ROLE_USER_MANAGEMENT_ADMIN,
-    AuthType.ROLE_USER_MANAGEMENT_MANAGE,
-    AuthType.ROLE_USER_MANAGEMENT_VIEW
-  };
 }
