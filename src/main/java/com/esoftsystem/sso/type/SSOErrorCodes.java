@@ -63,5 +63,8 @@ public interface SSOErrorCodes {
   String LDAP_PASSWORD_CHANGING_NOT_SUPPORTED = "ldap.password.changing.not.supported";
 
   String COULD_NOT_DELETE_TEAM_WHEN_STILL_HAS_USER = "requested.could.not.delete.team.when.still.has.user";
-  String NO_PERMISSION_TO_CREATE_UPDATE_USER_ON_TEAMS = "no.permission.to.create.update.user.on.teams";
+
+  String NO_PERMISSION_TO_ACCESS_USER_ON_TEAMS = "no.permission.to.access.user.on.teams";
+  String NO_PERMISSION_TO_CREATE_USER_ON_TEAMS = "no.permission.to.create.user.on.teams";
+  String NO_PERMISSION_TO_UPDATE_USER_ON_TEAMS = "no.permission.to.update.user.on.teams";
 }
