@@ -49,6 +49,8 @@ public class BaseUserData extends BaseUserProfileData {
   private String userStatus;
   @JsonProperty("fullTimeEmployee")
   private Boolean fullTimeEmployee;
+  @JsonProperty("fullTimeResource")
+  private String fullTimeResource;
   @JsonProperty(value = "authenticationConfig")
   private AuthenticationConfig authenticationConfig;
 

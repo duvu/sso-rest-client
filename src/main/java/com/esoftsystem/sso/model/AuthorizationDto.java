@@ -20,7 +20,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 /**
  * @author Vinh Nguyen
  * @since 1.0
@@ -72,6 +71,8 @@ public class AuthorizationDto implements Serializable {
   private String location;
   @JsonProperty("fullTimeEmployee")
   private Boolean fullTimeEmployee;
+  @JsonProperty("fullTimeResource")
+  private String fullTimeResource;
   @JsonProperty("avatarUrl")
   private String avatarUrl;
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
