@@ -42,6 +42,8 @@ public class UserSummaryDto implements Serializable {
   private String email;
   @JsonProperty("resourceName")
   private String resourceName;
+  @JsonProperty("fullTimeResource")
+  private String fullTimeResource;
   @JsonProperty("title")
   private String title;
   @JsonProperty("firstName")
