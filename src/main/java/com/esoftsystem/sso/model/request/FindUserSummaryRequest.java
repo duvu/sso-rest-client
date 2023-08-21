@@ -33,6 +33,10 @@ public class FindUserSummaryRequest implements Serializable {
   private static final long serialVersionUID = -8748598355778971407L;
   @JsonProperty(value = "teamCodes")
   private List<String> teamCodes;
+
+  @JsonProperty(value = "resourceTypes")
+  private List<String> resourceTypes;
+
   @JsonProperty(value = "locations")
   private List<String> locations;
   @JsonProperty(value = "groupIds")
